@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/moviedetail.css">
 </head>
 
-<body class="bg-dark text-white">
+<body class="text-white">
     <!-- Include the navbar -->
     <div id="navbar-container"></div>
 
@@ -25,12 +25,13 @@
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://placehold.co/1280x720/000000/FFFFFF?text=Movie+Poster\n1280x720"
+                    <img src="https://placehold.co/1280x720/000000/FFF000?text=Movie+Poster\n1280x720"
                         class="d-block w-100 image-fluid" alt="Movie Poster">
-                    <div class="carousel-caption d-md-block">
+                    <div class="carousel-caption d-md-block mb-4">
                         <div class="d-flex justify-content-start align-items-center gap-3">
-                            <span class="badge bg-secondary px-4 py-2 text-uppercase">Sci-fi</span>
-                            <div class="movie-rating d-flex align-items-center gap-1 justify-content-center">
+                            <span class="badge px-2 py-2 text-uppercase d-none d-lg-block">Sci-fi</span>
+                            <div
+                                class="movie-rating align-items-center gap-1 justify-content-center px-2 py-1 rounded-2 d-none d-lg-flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-star-fill" viewBox="0 0 16 16">
                                     <path
@@ -38,20 +39,23 @@
                                 </svg>
                                 <p class="mb-0"> 4.5</p>
                             </div>
-                            <p class="mb-0 text-uppercase">october, 2023</p>
-                            <p class="mb-0 text-uppercase">•</p>
-                            <p class="mb-0 text-uppercase">2H 30M</p>
+                            <div class="d-flex align-items-center gap-2">
+                                <p class="mb-0 text-uppercase fs-5 d-none d-lg-block">october, 2023</p>
+                                <p class="mb-0 text-uppercase fs-5 d-none d-lg-block">•</p>
+                                <p class="mb-0 text-uppercase fs-5 d-none d-lg-block">2H 30M</p>
+                            </div>
                         </div>
                         <div class="movie-info mt-3 text-start">
-                            <h1 class="movie-title">Movie Title</h1>
-                            <p class="d-none d-md-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et
+                            <h1 class="movie-title display-1">Movie Title</h1>
+                            <p class="d-none d-lg-block col-7">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                Et
                                 eum ex facilis ipsam sequi
                                 ut tempore officia illum eos laudantium, dolorum ea! Cumque quis maxime, minima libero
                                 itaque ducimus modi beatae incidunt provident obcaecati recusandae quae nostrum
                                 consectetur omnis esse?</p>
                         </div>
                         <div class="d-flex gap-3 mt-4 justify-content-start">
-                            <button class="btn btn-primary d-flex align-items-center gap-2">
+                            <button class="btn btn-primary d-flex align-items-center gap-2 px-2 py-1 px-sm-5 py-sm-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-play-fill" viewBox="0 0 16 16">
                                     <path
@@ -59,9 +63,9 @@
                                 </svg>
                                 Watch Trailer
                             </button>
-                            <button class="btn btn-secondary d-flex align-items-center gap-2">
+                            <button class="btn btn-secondary d-flex align-items-center gap-2 px-2 py-2 px-sm-5 py-sm-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    class="bi bi-heart-fill d-none" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
                                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                                 </svg>
@@ -84,46 +88,66 @@
     <section class="cast-section container mb-5 py-4">
         <div class="row g-3 d-flex align-items-start flex-column flex-lg-row">
             <div class="col-12 col-lg-8 mb-4 mb-lg-0">
-                <div class="d-flex justify-content-between mb-2 align-items-center">
-                    <h2 class="text fst-italic">Top Cast</h2>
-                    <a href="" class="btn btn-link p-0 text-light view-all">View All</a>
+                <div class="header-cast d-flex justify-content-between mb-2 align-items-center">
+                    <h2 class="fst-italic">Top Cast</h2>
+                    <a href="" class="btn btn-link p-0 text-uppercase" id="viewall">View All</a>
                 </div>
-                <div class="d-flex overflow-auto gap-3">
+                <div class="cast-list d-flex overflow-auto gap-3 py-3">
                     <div class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center">
-                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                            class="rounded-3 image-fluid">
+                        <div class="rounded-3 overflow-hidden">
+                            <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor"
+                                class="rounded-3 image-fluid">
+                        </div>
                         <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                             <h5 class="mb-0">Actor Name</h5>
                             <p class="mb-0">Character Name</p>
                         </div>
                     </div>
                     <div class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center">
-                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                            class="rounded-3 image-fluid">
+                        <div class="rounded-3 overflow-hidden">
+                            <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor"
+                                class="rounded-3 image-fluid">
+                        </div>
                         <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                             <h5 class="mb-0">Actor Name</h5>
                             <p class="mb-0">Character Name</p>
                         </div>
                     </div>
                     <div class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center">
-                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                            class="rounded-3 image-fluid">
+                        <div class="rounded-3 overflow-hidden">
+                            <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor"
+                                class="rounded-3 image-fluid">
+                        </div>
                         <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                             <h5 class="mb-0">Actor Name</h5>
                             <p class="mb-0">Character Name</p>
                         </div>
                     </div>
                     <div class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center">
-                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                            class="rounded-3 image-fluid">
+                        <div class="rounded-3 overflow-hidden">
+                            <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor"
+                                class="rounded-3 image-fluid">
+                        </div>
                         <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                             <h5 class="mb-0">Actor Name</h5>
                             <p class="mb-0">Character Name</p>
                         </div>
                     </div>
                     <div class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center">
-                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                            class="rounded-3 image-fluid">
+                        <div class="rounded-3 overflow-hidden">
+                            <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor"
+                                class="rounded-3 image-fluid">
+                        </div>
+                        <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
+                            <h5 class="mb-0">Actor Name</h5>
+                            <p class="mb-0">Character Name</p>
+                        </div>
+                    </div>
+                    <div class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center">
+                        <div class="rounded-3 overflow-hidden">
+                            <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor"
+                                class="rounded-3 image-fluid">
+                        </div>
                         <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                             <h5 class="mb-0">Actor Name</h5>
                             <p class="mb-0">Character Name</p>
@@ -132,8 +156,8 @@
                 </div>
             </div>
             <div class="col-12 col-lg-4">
-                <div class="container bg-black rounded-4 px-4 py-4 h-100">
-                    <div class="movie-details d-flex flex-column gap-3 justify-content-start align-items-start">
+                <div class="movie-details container rounded-4 px-4 py-4 h-100">
+                    <div class=" d-flex flex-column gap-3 justify-content-start align-items-start">
                         <div>
                             <p>The Author</p>
                             <h3>Author Name</h3>
@@ -151,7 +175,7 @@
                                         d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864z" />
                                     <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
                                 </svg>
-                                <h3 class="mb-0">Awards List</h3>
+                                <h3 class="ms-2 mb-0">Awards List</h3>
                             </div>
                         </div>
                     </div>
@@ -167,13 +191,14 @@
             <div class="d-flex justify-content-between mb-2 align-items-center">
                 <h2 class="text fst-italic">Similar Movies</h2>
             </div>
-            <div class="d-flex overflow-auto gap-3">
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
+            <div class="movie-list d-flex overflow-auto gap-3 px-2 py-3">
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250"
+                            alt="Movie Poster" class="rounded-3 image-fluid">
                     <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                        class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                        </div>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">
@@ -183,12 +208,12 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250" alt="Movie Poster"
+                            class="rounded-3 image-fluid">
+                        <span class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                    </div>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">
@@ -198,12 +223,12 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250" alt="Movie Poster"
+                            class="rounded-3 image-fluid">
+                        <span class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                    </div>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">
@@ -213,12 +238,12 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250" alt="Movie Poster"
+                            class="rounded-3 image-fluid">
+                        <span class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                    </div>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">
@@ -228,12 +253,12 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250" alt="Movie Poster"
+                            class="rounded-3 image-fluid">
+                        <span class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                    </div>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">
@@ -243,12 +268,12 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250" alt="Movie Poster"
+                            class="rounded-3 image-fluid">
+                        <span class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
+                    </div>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">
@@ -258,27 +283,12 @@
                         </div>
                     </div>
                 </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
-                    <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
-                        <h5 class="mb-0">Movie Title</h5>
-                        <div class="d-flex flex-row gap-2">
-                            <p class="mb-0">2022</p>
-                            <p class="mb-0 text-uppercase">•</p>
-                            <p class="mb-0 text-uppercase">Sci-fi</p>
-                        </div>
+                <div class="movie d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
+                    <div class="poster rounded-3">
+                        <img src="https://placehold.co/200x250/FFFFFF/000000?text=Movie\n200x250" alt="Movie Poster"
+                            class="rounded-3 image-fluid">
+                        <span class="badge bg-dark px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
                     </div>
-                </div>
-                <div
-                    class="cast-member d-flex flex-column align-items-start gap-2 justify-content-center position-relative">
-                    <img src="https://placehold.co/200x250/FFFFFF/000000?text=Actor\n200x250" alt="Actor 1"
-                        class="rounded-3 image-fluid position-relative">
-                    <span
-                        class="badge bg-secondary px-2 py-2 text-uppercase position-absolute top-0 end-0 m-2">8.5</span>
                     <div class="d-flex flex-column gap-1 justify-content-start align-items-start">
                         <h5 class="mb-0">Movie Title</h5>
                         <div class="d-flex flex-row gap-2">

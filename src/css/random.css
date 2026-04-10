@@ -1,0 +1,20 @@
+input[type="range"] {
+    pointer-events: none;
+    /* Allows clicking through to the lower slider */
+    -webkit-appearance: none;
+    width: 100%;
+    background: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events: auto;
+    /* Makes thumbs interactive */
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}

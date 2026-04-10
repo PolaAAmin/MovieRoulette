@@ -1,27 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Random generator page">
-    <meta name="author" content="Your Name">
-    <meta name="keywords" content="random, generator, movies, suggestions">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Random generator page" />
+    <meta name="author" content="Your Name" />
+    <meta name="keywords" content="random, generator, movies, suggestions" />
 
     <title>Random Generator</title>
 
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/random.css">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/random.css" />
 </head>
 
-<body>
+<body class="bg-black">
     <!--Nav bar-->
     <div id="navbar-container"></div>
     <!--End of Navbar-->
 
-    
+    <section class="container mb-5 py-4">
+        <div class="row">
+            <div class="col-12 col-lg-4 bg-dark text-white py-3 px-3 rounded-3">
+                
+                <div class="my-2">
+                    <div class="my-3">
+                        <label for="range-rating" class="my-1">Rating: <span id="min-rating-value">0</span>-100</label>
+                        <div class="position-relative">
+                            <input type="range" class="form-range" min="0" max="100" value="70" id="range-rating1" />
+                            <input type="range" class="form-range position-absolute start-0" min="0" max="100"
+                                value="30" id="range-rating2" />
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <label for="range-year" class="my-1">Year: <span id="min-year-value">1970</span>-2026</label>
+                        <div class="position-relative">
+                            <input type="range" class="form-range" min="1970" max="2026" value="2026"
+                                id="range-year1" />
+                            <input type="range" class="form-range position-absolute start-0" min="1970" max="2026"
+                                value="1996" id="range-year2" />
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <label for="range-runtime" class="my-1">Runtime: <span
+                                id="min-runtime-value">10</span>-242</label>
+                        <div class="position-relative">
+                            <input type="range" class="form-range" min="10" max="242" value="220" id="range-runtime1" />
+                            <input type="range" class="form-range position-absolute start-0" min="10" max="242"
+                                value="120" id="range-runtime2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 bg-danger my-5">a</div>
+        </div>
+    </section>
 
     <!--Footer-->
     <footer id="footer-container"></footer>

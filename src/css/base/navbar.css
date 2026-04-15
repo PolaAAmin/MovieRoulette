@@ -56,6 +56,28 @@ form input[type="search"]:focus {
     box-shadow: none !important;
 }
 
+ul.navbar-nav .nav-item button {
+    color: transparent;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+}
+
+ul.navbar-nav .nav-item button:active {
+    color: transparent;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 ul.navbar-nav .nav-item .bi {
     fill: #616161;
     transition: 0.2s ease-in-out;

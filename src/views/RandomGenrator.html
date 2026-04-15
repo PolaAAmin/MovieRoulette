@@ -16,17 +16,116 @@
     <link rel="stylesheet" href="../css/random.css" />
 </head>
 
-<body class="bg-black">
+<body class="">
     <!--Nav bar-->
     <div id="navbar-container"></div>
     <!--End of Navbar-->
 
-    <section class="container mb-5 py-4">
+    <section class="random-section container mb-5 py-4">
         <div class="row">
-            <div class="col-12 col-lg-4 bg-dark text-white py-3 px-3 rounded-3">
-                
+            <div class="header my-4">
+                <h2 class="display-1 title">
+                    Cinematic
+                    <br />
+                    <span>
+                        Destiny.
+                    </span>
+                </h2>
+                <p class="fst-italic subtitle">Set the parameters for your next emmersive movie search</p>
+            </div>
+
+            <div class="shadow-lg container-fluid col-12 col-lg-4 bg-dark text-white py-3 px-3 rounded-3 random-form">
                 <div class="my-2">
-                    <div class="my-3">
+                    <label for="genre" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-puzzle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.5.5 0 0 0-.115.118l-.012.025L6.5 4.5v.003l.003.01q.005.015.036.053a.9.9 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.9.9 0 0 0 .271-.194.2.2 0 0 0 .036-.054l.003-.01v-.008l-.012-.025a.5.5 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.5.5 0 0 0 .115-.118l.012-.025.001-.006v-.003l-.003-.01a.2.2 0 0 0-.036-.053.9.9 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11s-.912.1-1.19.24a.9.9 0 0 0-.271.194.2.2 0 0 0-.036.054l-.003.01v.002l.001.006.012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238z" />
+                        </svg>
+                        Genre:
+                    </label>
+                    <select class="form-select form-select-md mb-3 overflow-auto" aria-label="Large select example"
+                        id="genre">
+                        <option selected>All</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="my-2">
+                    <label for="sub-genre" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-puzzle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M3.112 3.645A1.5 1.5 0 0 1 4.605 2H7a.5.5 0 0 1 .5.5v.382c0 .696-.497 1.182-.872 1.469a.5.5 0 0 0-.115.118l-.012.025L6.5 4.5v.003l.003.01q.005.015.036.053a.9.9 0 0 0 .27.194C7.09 4.9 7.51 5 8 5c.492 0 .912-.1 1.19-.24a.9.9 0 0 0 .271-.194.2.2 0 0 0 .036-.054l.003-.01v-.008l-.012-.025a.5.5 0 0 0-.115-.118c-.375-.287-.872-.773-.872-1.469V2.5A.5.5 0 0 1 9 2h2.395a1.5 1.5 0 0 1 1.493 1.645L12.645 6.5h.237c.195 0 .42-.147.675-.48.21-.274.528-.52.943-.52.568 0 .947.447 1.154.862C15.877 6.807 16 7.387 16 8s-.123 1.193-.346 1.638c-.207.415-.586.862-1.154.862-.415 0-.733-.246-.943-.52-.255-.333-.48-.48-.675-.48h-.237l.243 2.855A1.5 1.5 0 0 1 11.395 14H9a.5.5 0 0 1-.5-.5v-.382c0-.696.497-1.182.872-1.469a.5.5 0 0 0 .115-.118l.012-.025.001-.006v-.003l-.003-.01a.2.2 0 0 0-.036-.053.9.9 0 0 0-.27-.194C8.91 11.1 8.49 11 8 11s-.912.1-1.19.24a.9.9 0 0 0-.271.194.2.2 0 0 0-.036.054l-.003.01v.002l.001.006.012.025c.016.027.05.068.115.118.375.287.872.773.872 1.469v.382a.5.5 0 0 1-.5.5H4.605a1.5 1.5 0 0 1-1.493-1.645L3.356 9.5h-.238c-.195 0-.42.147-.675.48-.21.274-.528.52-.943.52-.568 0-.947-.447-1.154-.862C.123 9.193 0 8.613 0 8s.123-1.193.346-1.638C.553 5.947.932 5.5 1.5 5.5c.415 0 .733.246.943.52.255.333.48.48.675.48h.238z" />
+                        </svg>
+                        Sub-Genre:
+                    </label>
+                    <select class="form-select form-select-md mb-3 overflow-auto" aria-label="Large select example"
+                        id="sub-genre">
+                        <option selected>All</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="my-2">
+                    <label for="language" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-translate" viewBox="0 0 16 16">
+                            <path
+                                d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                            <path
+                                d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                        </svg>
+                        Language:
+                    </label>
+                    <select class="form-select form-select-md mb-3 overflow-auto" aria-label="Large select example"
+                        id="language">
+                        <option selected>All</option>
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                        <option value="ara">Arabic</option>
+                    </select>
+                </div>
+                <div class="my-2">
+                    <label for="mood" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-emoji-laughing-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5s-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5m5.331 3a1 1 0 0 1 0 1A5 5 0 0 1 8 13a5 5 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5m-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5s-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235" />
+                        </svg>
+                        Mood:
+                    </label>
+                    <div class="row container" id="mood">
+                        <div class="form-check form-switch col-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Happy</label>
+                        </div>
+                        <div class="form-check form-switch col-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Sad</label>
+                        </div>
+                        <div class="form-check form-switch col-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Chill</label>
+                        </div>
+                        <div class="form-check form-switch col-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Romantic</label>
+                        </div>
+                        <div class="form-check form-switch col-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Funny</label>
+                        </div>
+                        <div class="form-check form-switch col-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Chaotic</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-2">
+                    <div class="my-2">
                         <label for="range-rating" class="my-1">Rating: <span id="min-rating-value">0</span>-100</label>
                         <div class="position-relative">
                             <input type="range" class="form-range" min="0" max="100" value="70" id="range-rating1" />
@@ -34,7 +133,7 @@
                                 value="30" id="range-rating2" />
                         </div>
                     </div>
-                    <div class="my-3">
+                    <div class="my-2">
                         <label for="range-year" class="my-1">Year: <span id="min-year-value">1970</span>-2026</label>
                         <div class="position-relative">
                             <input type="range" class="form-range" min="1970" max="2026" value="2026"
@@ -43,7 +142,7 @@
                                 value="1996" id="range-year2" />
                         </div>
                     </div>
-                    <div class="my-3">
+                    <div class="my-2">
                         <label for="range-runtime" class="my-1">Runtime: <span
                                 id="min-runtime-value">10</span>-242</label>
                         <div class="position-relative">
@@ -53,8 +152,118 @@
                         </div>
                     </div>
                 </div>
+
+                <button type="submit"
+                    class="btn btn-primary btn-lg w-100 my-3 d-flex align-items-center justify-content-center gap-1 py-4"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+                            stroke="currentColor" stroke-width="1" />
+                        <path
+                            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+                            stroke="currentColor" stroke-width="1" />
+                    </svg>
+                    Spin The Wheel
+                </button>
             </div>
-            <div class="col-12 col-lg-8 bg-danger my-5">a</div>
+
+            <div class="col-12 col-lg-8 my-5 container-fluid d-flex flex-column">
+                <div class="carousel-item active">
+                    <div class="overflow-hidden container-fluid">
+                        <img src="https://placehold.co/1280x720/000000/FFF000?text=Movie+Poster\n1280x720"
+                            class="d-block image-fluid rounded-3 mx-auto my-3 shadow-lg w-100" alt="Movie Poster" />
+                    </div>
+
+                    <div class="carousel-caption d-md-block mb-4">
+                        <div class="d-flex justify-content-start align-items-center gap-3">
+                            <span class="badge px-2 py-2 text-uppercase d-block">Sci-fi</span>
+                            <div
+                                class="movie-rating align-items-center gap-1 justify-content-center px-2 py-1 rounded-2 d-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <p class="mb-0"> 4.5</p>
+                            </div>
+                        </div>
+                        <div class="movie-info mt-3 text-start">
+                            <h1 class="movie-title display-6">Movie Title</h1>
+                        </div>
+                        <div class="d-flex gap-3 mt-4 justify-content-start">
+                            <button class="btn btn-primary d-flex align-items-center gap-2 px-2 py-1 px-sm-5 py-sm-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-play-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                                </svg>
+                                Watch Trailer
+                            </button>
+                            <button class="btn btn-secondary d-flex align-items-center gap-2 px-2 py-2 px-sm-5 py-sm-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-eye" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                    <path
+                                        d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                                </svg>
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="btns-resubmit d-flex justify-content-center gap-5 container-fluid">
+                    <div class="d-flex flex-column justify-content-center align-items-center mx-2">
+                        <button type="button" id="dismiss"
+                            class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center my-2"
+                            style="width: 60px; height:60px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                                    stroke="currentColor" stroke-width="1" />
+                            </svg>
+                        </button>
+                        <p>Dismiss</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center mx-2">
+                        <button type="button" id="randomize"
+                            class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center my-2"
+                            style="width: 90px; height:90px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"
+                                    stroke="currentColor" stroke-width="1" />
+                                <path fill-rule="evenodd"
+                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"
+                                    stroke="currentColor" stroke-width="1" />
+                            </svg></button>
+                        <p>Randomize</p>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center p-0 mx-2">
+                        <button type="button" id="favourite"
+                            class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center my-2"
+                            style="width:60px; height:60px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-heart-fill d-none" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                                    stroke="currentColor" stroke-width="1" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-heart" viewBox="0 0 16 16">
+                                <path
+                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                                    stroke="currentColor" stroke-width="1" />
+                            </svg>
+                        </button>
+                        <p>Favourite</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

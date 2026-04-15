@@ -1,4 +1,89 @@
-input[type="range"] {
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    background-color: #141414;
+}
+
+
+/*Header Styling*/
+
+.random-section .header .title {
+    font-weight: bold;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    letter-spacing: none;
+    color: #fff;
+}
+
+.random-section .header .title span {
+    font-weight: bold;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    letter-spacing: none;
+    color: rgb(255 142 128 / var(--tw-text-opacity, 1));
+}
+
+.random-section .header .subtitle {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.random-section .random-form label {
+    color: #fff;
+    font-size: 1.1rem;
+    font-variant-caps: all-petite-caps;
+    font-weight: 600;
+}
+
+/* Random Form Styling*/
+
+.random-section .random-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    color: #adaaaa;
+    background-color: #141414;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0px 0px 10px #000;
+    outline: 0.5px solid #ff7668;
+    font-size: 1.1rem;
+    appearance: base-select;
+    display: flex;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #ff7668 transparent;
+}
+
+.random-section .random-form option {
+    color: #adaaaa;
+}
+
+.random-section .random-form select::picker(select) {
+    appearance: base-select;
+    background-color: #141414;
+    color: #ff7668;
+    border: 0.5px solid #ff7668;
+    border-radius: 8px;
+}
+
+.random-section .random-form input[type="checkbox"] {
+    background-color: #adaaaa;
+    border: none;
+}
+
+.random-section .random-form input[type="checkbox"]:focus{
+    background-color: #ff7668;
+    border: #ff7668 1px solid;
+    box-shadow: none;
+}
+
+.random-section .random-form input[type="checkbox"]:checked {
+    background-color: #ff7668;
+    border: #ff7668 1px solid;
+    box-shadow: none;
+}
+
+.random-section .random-form input[type="range"] {
     pointer-events: none;
     /* Allows clicking through to the lower slider */
     -webkit-appearance: none;
@@ -6,15 +91,172 @@ input[type="range"] {
     background: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.random-section .random-form input[type="range"]::-webkit-slider-thumb {
     pointer-events: auto;
     /* Makes thumbs interactive */
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
-    background: #007bff;
+    background: #ff7668;
     border-radius: 50%;
     cursor: pointer;
     position: relative;
     z-index: 2;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.random-section .random-form input[type="range"]::-webkit-slider-thumb:hover {
+    border:none;
+    box-shadow: none;
+    background-color: #b45449;
+}
+
+.random-section .random-form input[type="range"]::-webkit-slider-thumb:active {
+    border:none;
+    box-shadow: none;
+    background-color: #b45449;
+}
+
+.random-section .random-form input[type="range"]::-webkit-slider-runnable-track {
+    pointer-events: auto;
+    /* Makes the track interactive */
+    background: #141414;
+}
+
+.random-section .random-form button {
+    background-color: #ff6655;
+    color: #000;
+    border:none;
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+
+.random-section .random-form button:hover {
+    background-color: #f75543;
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px #000;
+    transition: all 0.5s ease-in-out;
+}
+
+.random-section .random-form button svg {
+    transform: rotate(0deg);
+    transition: all 0.6s ease-in-out;
+}
+
+.random-section .random-form button:hover svg {
+    transform: rotate(180deg);
+}
+
+
+/* Carousel Styling */
+
+
+.carousel-item .carousel-caption span {
+    font-size: 0.8rem;
+    background-color: blueviolet;
+}
+
+.carousel-item .carousel-caption .movie-rating {
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+}
+
+.movie-info .movie-title {
+    font-weight: bold;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.carousel-item .btn-primary {
+    background-color: #ff6655;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+}
+
+.carousel-item .btn-primary:hover {
+    background-color: #f75543;
+    box-shadow: 0px 0px 10px #000;
+    transform: translateY(-2px)
+}
+
+.carousel-item .btn-secondary {
+    background-color: #26262666;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.carousel-item .btn-secondary:hover {
+    background-color: #26262666;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transform: translateY(-2px);
+}
+
+.btns-resubmit p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.btns-resubmit button {
+    box-shadow: #000 0px 0px 10px 0px;
+    transition: all 0.3s ease-in-out
+}
+
+.btns-resubmit button[id="dismiss"], .btns-resubmit button[id="favourite"]{
+    background-color: #343232;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    font-family: 'inter', sans-serif;
+    font-weight: bold
+}
+
+.btns-resubmit button[id="dismiss"]:hover {
+    background-color: #c0504382;
+    color: #ff6655;
+    border: none;
+    transform: translateY(-2px);
+}
+
+.btns-resubmit button[id="favourite"]:hover {
+    background-color: #d934ef82;
+    color: #ff00fb;
+    border: none;
+    transform: translateY(-2px);
+}
+
+.btns-resubmit button[id="randomize"] {
+    background-color: #ff6655;
+    color: #000;
+    border:none;
+    transition: all 0.3s ease-in-out;
+    font-family: 'inter', sans-serif;
+    font-weight: bold
+}
+
+.btns-resubmit button[id="randomize"]:hover {
+    background-color: #f75543;
+    color: #000;
+    border:none;
+    transform: translateY(-2px);
+}
+
+.btns-resubmit button[id="randomize"]:hover svg{
+    animation: rotate 1s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

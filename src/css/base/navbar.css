@@ -88,6 +88,30 @@ ul.navbar-nav .nav-item .bi:hover {
     cursor: pointer;
 }
 
+ul.navbar-nav .nav-item .btn-group .dropdown-menu {
+    background-color: #000000;
+    color: #adaaaa;
+    outline: #ff7668 2px solid !important;
+    box-shadow: none !important;
+    border:none;
+}
+
+ul.navbar-nav .nav-item .btn-group .dropdown-menu .dropdown-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #adaaaa;
+}
+
+ul.navbar-nav .nav-item .btn-group .dropdown-menu .dropdown-item:hover{
+    background-color: #3b302eae;
+    color: #ff6a5a;
+}
+
+
+
+
+
+
 @media (max-width: 992px) {
     .navbar-dark .navbar-nav .nav-link {
         font-size: 0.9rem;

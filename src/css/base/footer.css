@@ -51,36 +51,3 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #ff4c3b;
 }
-
-@media (max-width: 992px) {
-    footer {
-        padding: 30px 0;
-    }
-
-    .social-media .social-icons ul {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .links {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .links a {
-        display: block;
-        margin-bottom: 10px;
-    }
-    form {
-        flex-direction: column;
-        gap: 10px;
-    }
-    form input[type="email"] {
-        width: 100%;
-    }
-    form button[type="submit"] {
-        width: 100%;
-    }
-}
-

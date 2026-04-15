@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <footer class="bg-dark text-white d-flex flex-column justify-content-center align-items-center text-center">
-        <div class="container-fluid mb-5 ">
-            <div class="row flex-md-row flex-row flex-wrap justify-content-center gap-4">
-                <div class="col-3 text-center social-media">
+    <footer class="bg-dark text-white">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="row gy-4 justify-content-center text-center text-sm-start mb-4 mb-lg-5">
+                <div class="col-12 col-sm-6 col-lg-3 social-media">
                     <p class="mb-2">Follow us on social media!</p>
                     <div class="social-icons">
-                        <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center gap-3">
-                            <li class="nav-item ">
+                        <ul class="navbar-nav d-flex flex-row flex-wrap justify-content-center justify-content-sm-start gap-3">
+                            <li class="nav-item">
                                 <a href="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-instagram" viewBox="0 0 16 16">
@@ -28,7 +28,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li  class="nav-item">
+                            <li class="nav-item">
                                 <a href="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-facebook" viewBox="0 0 16 16">
@@ -37,7 +37,7 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li  class="nav-item" >
+                            <li class="nav-item">
                                 <a href="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-tiktok" viewBox="0 0 16 16">
@@ -67,9 +67,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-3 movies">
+                <div class="col-12 col-sm-6 col-lg-3 movies">
                     <p class="mb-2">Explore our movie collection!</p>
-                    <ul class="navbar-nav d-flex flex-column flex-nowrap justify-content-center gap-">
+                    <ul class="navbar-nav d-flex flex-column gap-2">
                         <li class="nav-item">
                             <a href="#" class="text-decoration-none">Top Rated</a>
                         </li>
@@ -82,10 +82,11 @@
                         <li class="nav-item">
                             <a href="#" class="text-decoration-none">Actors</a>
                         </li>
+                    </ul>
                 </div>
-                <div class="col-3 series">
+                <div class="col-12 col-sm-6 col-lg-3 series">
                     <p class="mb-2">Explore our series collection!</p>
-                    <ul class="navbar-nav d-flex flex-column flex-nowrap justify-content-center gap-">
+                    <ul class="navbar-nav d-flex flex-column gap-2">
                         <li class="nav-item">
                             <a href="#" class="text-decoration-none">Top Rated</a>
                         </li>
@@ -98,29 +99,37 @@
                         <li class="nav-item">
                             <a href="#" class="text-decoration-none">Actors</a>
                         </li>
+                    </ul>
                 </div>
-                <div class="col-3 newsletter">
+                <div class="col-12 col-sm-6 col-lg-3 newsletter">
                     <p class="mb-2">Join our newsletter for updates and recommendations!</p>
-                    <form class="d-flex flex-row flex-nowrap justify-content-center gap-2">
-                        <input type="email" class="form-control rounded-pill px-4 bg-dark text-white w-100" placeholder="Enter your email">
-                        <button type="submit" class="btn btn-primary rounded-pill">Subscribe</button>
+                    <form class="row g-2">
+                        <div class="col-12 col-sm">
+                            <input type="email" id="emailNewsLetter" class="form-control rounded-pill px-4 bg-dark text-white w-100"
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="col-12 col-sm-auto">
+                            <button type="submit" id="subscribe" lass="btn btn-primary rounded-pill w-100">Subscribe</button>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
-        <div class="container d-flex flex-lg-column justify-content-lg-between flex-md-row">
-            <div class="row">
-                <div class="col-md-6 text-md-start mb-3 mb-md-0">
-                    <p>&copy; 2026 Movie Roulette. All rights reserved.</p>
+            <div class="row gy-2 align-items-center text-center text-md-start">
+                <div class="col-12 col-md-6">
+                    <p class="mb-0">&copy; 2026 Movie Roulette. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 text-md-end links">
-                    <a href="#" class="text-decoration-none me-3">Privacy Policy</a>
-                    <a href="#" class="text-decoration-none me-3">Terms of Service</a>
-                    <a href="#" class="text-decoration-none me-3">API Docs</a>
+                <div class="col-12 col-md-6 links d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
+                    <a href="#" class="text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-decoration-none">Terms of Service</a>
+                    <a href="#" class="text-decoration-none">API Docs</a>
                 </div>
             </div>
         </div>
     </footer>
+
+        <script src="../../js/bootstrap.bundle.js"></script>
+        <script src="../../js/index.js"></script>
+        <script src="../../js/base/footer.js"></script>
 </body>
 
 </html>

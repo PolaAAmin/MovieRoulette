@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+
+body.home-page {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(255, 118, 104, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(191, 129, 255, 0.12), transparent 25%),
+        linear-gradient(180deg, #090909 0%, #111111 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.home-main {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.section-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #f9c5bf;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.text-gradient {
+    background-image: linear-gradient(135deg, #ffb5ac 0%, #ff7668 55%, #ff8e80 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.glass-panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(18px);
+}
+
+.home-hero {
+    position: relative;
+    padding: 4rem 0 2rem;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.48) 45%, rgba(0, 0, 0, 0.82) 100%),
+        url('https://placehold.co/1400x720/171717/f4f4f4?text=Featured+Movie+Backdrop') center/cover;
+    opacity: 0.9;
+    z-index: -2;
+}
+
+.home-hero::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 180px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101010 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: end;
+}
+
+.hero-copy h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5.4rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    margin: 1.25rem 0 1rem;
+}
+
+.hero-copy p {
+    max-width: 42rem;
+    color: #c9c6c6;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.hero-meta span {
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #f2eeee;
+    font-weight: 600;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-btn,
+.ghost-btn {
+    min-height: 3.25rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-btn {
+    border: none;
+    background: linear-gradient(135deg, #ff8e80 0%, #ff7668 100%);
+    color: #120909;
+    box-shadow: 0 14px 35px rgba(255, 118, 104, 0.28);
+}
+
+.ghost-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+}
+
+.hero-btn:hover,
+.ghost-btn:hover,
+.filter-chip:hover,
+.quick-card:hover,
+.movie-card:hover,
+.spotlight-card:hover {
+    transform: translateY(-4px);
+}
+
+.hero-side {
+    padding: 1.5rem;
+    border-radius: 1.75rem;
+}
+
+.hero-side h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.hero-side p {
+    color: #bdb8b8;
+    line-height: 1.7;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+.hero-stat {
+    padding: 1rem;
+    border-radius: 1.25rem;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #ffffff;
+}
+
+.hero-stat span {
+    color: #adaaaa;
+    font-size: 0.88rem;
+}
+
+.home-section {
+    padding: 1.5rem 0;
+}
+
+.home-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.home-section-subtext {
+    color: #adaaaa;
+    margin: 0;
+}
+
+.filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.filter-chip {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #ffffff;
+    border-radius: 999px;
+    padding: 0.8rem 1.1rem;
+    font-weight: 700;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.filter-chip.active {
+    background: linear-gradient(135deg, rgba(255, 142, 128, 0.18), rgba(255, 118, 104, 0.2));
+    border-color: rgba(255, 118, 104, 0.5);
+    color: #ffb6ae;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.quick-card {
+    padding: 1.4rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.quick-card small {
+    color: #adaaaa;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.quick-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.35rem;
+    margin: 0.65rem 0 0.55rem;
+}
+
+.quick-card p {
+    color: #c9c6c6;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.spotlight-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 1.75rem;
+    transition: transform 0.25s ease;
+}
+
+.spotlight-poster img {
+    width: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    border-radius: 1.25rem;
+}
+
+.spotlight-body h3,
+.movie-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+}
+
+.spotlight-body p {
+    color: #c3bfbf;
+    line-height: 1.8;
+}
+
+.spotlight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.spotlight-tags span {
+    color: #ffb5ac;
+    font-weight: 700;
+}
+
+.movies-rail {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.movie-card {
+    padding: 1rem;
+    border-radius: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.movie-card p {
+    color: #adaaaa;
+    margin-bottom: 0.5rem;
+}
+
+.movie-card .movie-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: #f0ecec;
+    font-weight: 600;
+}
+
+.movie-card.is-hidden {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .hero-content,
+    .spotlight-card,
+    .quick-grid,
+    .movies-rail {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-content {
+        align-items: stretch;
+    }
+
+    .hero-side,
+    .spotlight-body {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-hero {
+        padding-top: 2.5rem;
+    }
+
+    .hero-content,
+    .quick-grid,
+    .movies-rail,
+    .spotlight-card,
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .home-section-header {
+        align-items: start;
+        flex-direction: column;
+    }
+}

@@ -1,6 +1,9 @@
-.bg-dark {
-    background-color: var(--color-black) !important;
-    color: var(--color-text-primary) !important;
+nav {
+    background: var(--color-surface-dark-22); 
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border-bottom: var(--border-strong);
+    color: var(--color-text-primary);
 }
 
 .navbar-dark .navbar-brand .brand-name {

@@ -36,6 +36,14 @@ body {
 
 /* Random Form Styling*/
 
+.random-form {
+    background: var(--color-surface-dark-22); 
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+    border: var(--border-strong);
+    box-shadow: var(--shadow-accent);
+}
+
 .random-section .random-form select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -93,7 +101,6 @@ body {
 }
 
 .random-section .random-form input[type="range"] {
-    pointer-events: none;
     /* Allows clicking through to the lower slider */
     -webkit-appearance: none;
     width: 100%;
@@ -110,7 +117,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     box-shadow: var(--shadow-control);
 }
 
@@ -160,6 +167,9 @@ body {
 
 /* Carousel Styling */
 
+.carousel-item div img {
+    border: var(--border-strong);
+}
 
 .carousel-item .carousel-caption span {
     font-size: 0.8rem;

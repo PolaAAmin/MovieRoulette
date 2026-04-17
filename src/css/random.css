@@ -54,6 +54,11 @@ body {
     scrollbar-color: var(--color-accent) transparent;
 }
 
+.random-section .random-form select:hover {
+    cursor: pointer;
+}
+
+
 .random-section .random-form option {
     color: var(--color-text-muted);
 }
@@ -69,6 +74,10 @@ body {
 .random-section .random-form input[type="checkbox"] {
     background-color: var(--color-text-muted);
     border: none;
+}
+
+.random-section .random-form input[type="checkbox"]:hover {
+    cursor: pointer;
 }
 
 .random-section .random-form input[type="checkbox"]:focus {

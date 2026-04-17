@@ -1,7 +1,7 @@
 body {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: #616161;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-subtle);
 }
 
 footer {
@@ -9,7 +9,7 @@ footer {
 }
 
 .bg-dark {
-    background-color: #000 !important;
+    background-color: var(--color-black) !important;
 }
 
 .social-media .social-icons ul {
@@ -19,35 +19,35 @@ footer {
 }
 
 a {
-    color: #616161;
-    transition: color 0.3s ease;
+    color: var(--color-text-subtle);
+    transition: color var(--transition-slow);
 }
 
 a:hover {
-    color: #ff7668;
+    color: var(--color-accent);
     text-decoration: none;
 }
 
 form input[type="email"]::placeholder {
-    color: #616161 !important;
+    color: var(--color-text-subtle) !important;
     opacity: 1 !important;
 }
 
 form input[type="email"]:focus {
-    border: #ff7668 2px solid !important;
+    border: var(--border-accent) !important;
     box-shadow: none !important;
 }
 
 form button[type="submit"] {
-    background-color: #ff7668;
+    background-color: var(--color-accent);
     border: none;
-    color: #fff;
+    color: var(--color-text-primary);
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-slow);
 }
 
 form button[type="submit"]:hover {
-    background-color: #ff4c3b;
+    background-color: var(--color-accent-hover);
 }

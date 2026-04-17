@@ -1,8 +1,8 @@
 body {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-sm);
     letter-spacing: 0.02em;
-    background-color: #141414;
+    background-color: var(--color-bg-panel);
 }
 
 
@@ -10,25 +10,25 @@ body {
 
 .random-section .header .title {
     font-weight: bold;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    letter-spacing: none;
-    color: #fff;
+    font-family: var(--font-family-display);
+    letter-spacing: normal;
+    color: var(--color-text-primary);
 }
 
 .random-section .header .title span {
     font-weight: bold;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    letter-spacing: none;
-    color: rgb(255 142 128 / var(--tw-text-opacity, 1));
+    font-family: var(--font-family-display);
+    letter-spacing: normal;
+    color: var(--color-accent-strong);
 }
 
 .random-section .header .subtitle {
-    color: #fff;
+    color: var(--color-text-primary);
     font-size: 1.2rem;
 }
 
 .random-section .random-form label {
-    color: #fff;
+    color: var(--color-text-primary);
     font-size: 1.1rem;
     font-variant-caps: all-petite-caps;
     font-weight: 600;
@@ -40,46 +40,46 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: none;
-    color: #adaaaa;
-    background-color: #141414;
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-panel);
     border: none;
-    font-family: 'Inter', sans-serif;
-    box-shadow: 0px 0px 10px #000;
-    outline: 0.5px solid #ff7668;
+    font-family: var(--font-family-body);
+    box-shadow: var(--shadow-control);
+    outline: var(--outline-accent-thin);
     font-size: 1.1rem;
     appearance: base-select;
     display: flex;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #ff7668 transparent;
+    scrollbar-color: var(--color-accent) transparent;
 }
 
 .random-section .random-form option {
-    color: #adaaaa;
+    color: var(--color-text-muted);
 }
 
 .random-section .random-form select::picker(select) {
     appearance: base-select;
-    background-color: #141414;
-    color: #ff7668;
-    border: 0.5px solid #ff7668;
-    border-radius: 8px;
+    background-color: var(--color-bg-panel);
+    color: var(--color-accent);
+    border: var(--outline-accent-thin);
+    border-radius: var(--radius-sm);
 }
 
 .random-section .random-form input[type="checkbox"] {
-    background-color: #adaaaa;
+    background-color: var(--color-text-muted);
     border: none;
 }
 
-.random-section .random-form input[type="checkbox"]:focus{
-    background-color: #ff7668;
-    border: #ff7668 1px solid;
+.random-section .random-form input[type="checkbox"]:focus {
+    background-color: var(--color-accent);
+    border: var(--border-accent-thin);
     box-shadow: none;
 }
 
 .random-section .random-form input[type="checkbox"]:checked {
-    background-color: #ff7668;
-    border: #ff7668 1px solid;
+    background-color: var(--color-accent);
+    border: var(--border-accent-thin);
     box-shadow: none;
 }
 
@@ -97,51 +97,51 @@ body {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
-    background: #ff7668;
+    background: var(--color-accent);
     border-radius: 50%;
     cursor: pointer;
     position: relative;
     z-index: 2;
-    box-shadow: 0px 0px 10px #000;
+    box-shadow: var(--shadow-control);
 }
 
 .random-section .random-form input[type="range"]::-webkit-slider-thumb:hover {
-    border:none;
+    border: none;
     box-shadow: none;
-    background-color: #b45449;
+    background-color: var(--color-accent-hover-muted);
 }
 
 .random-section .random-form input[type="range"]::-webkit-slider-thumb:active {
-    border:none;
+    border: none;
     box-shadow: none;
-    background-color: #b45449;
+    background-color: var(--color-accent-hover-muted);
 }
 
 .random-section .random-form input[type="range"]::-webkit-slider-runnable-track {
     pointer-events: auto;
     /* Makes the track interactive */
-    background: #141414;
+    background: var(--color-bg-panel);
 }
 
 .random-section .random-form button {
-    background-color: #ff6655;
-    color: #000;
-    border:none;
-    font-family: 'inter', sans-serif;
+    background-color: var(--color-accent-alt);
+    color: var(--color-text-on-dark);
+    border: none;
+    font-family: var(--font-family-body);
     font-weight: bold;
-    transition: all 0.5s ease-in-out;
+    transition: all var(--transition-emphasis);
 }
 
 .random-section .random-form button:hover {
-    background-color: #f75543;
+    background-color: var(--color-accent-hover-strong);
     transform: translateY(-5px);
-    box-shadow: 0px 0px 10px #000;
-    transition: all 0.5s ease-in-out;
+    box-shadow: var(--shadow-control);
+    transition: all var(--transition-emphasis);
 }
 
 .random-section .random-form button svg {
     transform: rotate(0deg);
-    transition: all 0.6s ease-in-out;
+    transition: all var(--transition-spin);
 }
 
 .random-section .random-form button:hover svg {
@@ -154,109 +154,111 @@ body {
 
 .carousel-item .carousel-caption span {
     font-size: 0.8rem;
-    background-color: blueviolet;
+    background-color: var(--color-badge-category);
 }
 
 .carousel-item .carousel-caption .movie-rating {
-    background-color: #ffcc00;
-    color: #000;
+    background-color: var(--color-warning);
+    color: var(--color-text-on-dark);
     font-weight: bold;
 }
 
 .movie-info .movie-title {
     font-weight: bold;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: var(--font-family-display);
 }
 
 .carousel-item .btn-primary {
-    background-color: #ff6655;
-    color: #000;
+    background-color: var(--color-accent-alt);
+    color: var(--color-text-on-dark);
     font-weight: bold;
-    transition: 0.3s;
+    transition: var(--transition-slow);
     border: none;
 }
 
 .carousel-item .btn-primary:hover {
-    background-color: #f75543;
-    box-shadow: 0px 0px 10px #000;
-    transform: translateY(-2px)
+    background-color: var(--color-accent-hover-strong);
+    box-shadow: var(--shadow-control);
+    transform: translateY(-2px);
 }
 
 .carousel-item .btn-secondary {
-    background-color: #26262666;
-    color: #fff;
+    background-color: var(--color-bg-soft-transparent);
+    color: var(--color-text-primary);
     font-weight: bold;
     border: none;
-    transition: 0.3s;
+    transition: var(--transition-slow);
 }
 
 .carousel-item .btn-secondary:hover {
-    background-color: #26262666;
-    color: #fff;
+    background-color: var(--color-bg-soft-transparent);
+    color: var(--color-text-primary);
     font-weight: bold;
     border: none;
     transform: translateY(-2px);
 }
 
 .btns-resubmit p {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: #fff;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
 }
 
 .btns-resubmit button {
-    box-shadow: #000 0px 0px 10px 0px;
-    transition: all 0.3s ease-in-out
+    box-shadow: var(--shadow-control);
+    transition: all var(--transition-medium);
 }
 
-.btns-resubmit button[id="dismiss"], .btns-resubmit button[id="favourite"]{
-    background-color: #343232;
-    color: #ffffff;
+.btns-resubmit button[id="dismiss"],
+.btns-resubmit button[id="favourite"] {
+    background-color: var(--color-bg-button-neutral);
+    color: var(--color-text-primary);
     border: none;
-    transition: all 0.3s ease-in-out;
-    font-family: 'inter', sans-serif;
-    font-weight: bold
+    transition: all var(--transition-medium);
+    font-family: var(--font-family-body);
+    font-weight: bold;
 }
 
 .btns-resubmit button[id="dismiss"]:hover {
-    background-color: #c0504382;
-    color: #ff6655;
+    background-color: var(--color-bg-dismiss-hover);
+    color: var(--color-accent-alt);
     border: none;
     transform: translateY(-2px);
 }
 
 .btns-resubmit button[id="favourite"]:hover {
-    background-color: #d934ef82;
-    color: #ff00fb;
+    background-color: var(--color-bg-favorite-hover);
+    color: var(--color-text-favorite);
     border: none;
     transform: translateY(-2px);
 }
 
 .btns-resubmit button[id="randomize"] {
-    background-color: #ff6655;
-    color: #000;
-    border:none;
-    transition: all 0.3s ease-in-out;
-    font-family: 'inter', sans-serif;
-    font-weight: bold
+    background-color: var(--color-accent-alt);
+    color: var(--color-text-on-dark);
+    border: none;
+    transition: all var(--transition-medium);
+    font-family: var(--font-family-body);
+    font-weight: bold;
 }
 
 .btns-resubmit button[id="randomize"]:hover {
-    background-color: #f75543;
-    color: #000;
-    border:none;
+    background-color: var(--color-accent-hover-strong);
+    color: var(--color-text-on-dark);
+    border: none;
     transform: translateY(-2px);
 }
 
-.btns-resubmit button[id="randomize"]:hover svg{
+.btns-resubmit button[id="randomize"]:hover svg {
     animation: rotate 1s ease-in-out infinite;
 }
 
 @keyframes rotate {
-    from{
+    from {
         transform: rotate(0deg);
     }
-    to{
+
+    to {
         transform: rotate(360deg);
     }
 }

@@ -13,15 +13,29 @@
 
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/base/navbar.css">
+        <link rel="stylesheet" href="../css/base/footer.css">
     <link rel="stylesheet" href="../css/random.css" />
 </head>
 
-<body class="">
+<body class="bg-black">
     <!--Nav bar-->
     <div id="navbar-container"></div>
     <!--End of Navbar-->
 
     <section class="random-section container mb-5 py-4">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content position-relative">
+                    <iframe width="1080" height="500"
+                        src="https://www.youtube.com/embed/2h9CqRlHzrc?si=DQEfWr7p6fu9rBJg&amp;controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        class="mx-auto position-absolute start-50 top-50 translate-middle"></iframe>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="header my-4">
                 <h2 class="display-1 title">
@@ -34,7 +48,7 @@
                 <p class="fst-italic subtitle">Set the parameters for your next emmersive movie search</p>
             </div>
 
-            <div class="shadow-lg container-fluid col-12 col-lg-4 bg-dark text-white py-3 px-3 rounded-3 random-form">
+            <div class="container-fluid col-12 col-lg-4 text-white py-3 px-3 rounded-3 random-form">
                 <div class="my-2">
                     <label for="genre" class="form-label d-flex align-items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -45,7 +59,7 @@
                         Genre:
                     </label>
                     <select class="form-select form-select-md mb-3 overflow-auto" aria-label="Large select example"
-                        id="genre">
+                        id="genre" multiple>
                         <option selected>All</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -62,7 +76,7 @@
                         Sub-Genre:
                     </label>
                     <select class="form-select form-select-md mb-3 overflow-auto" aria-label="Large select example"
-                        id="sub-genre">
+                        id="sub-genre" multiple>
                         <option selected>All</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
@@ -81,7 +95,7 @@
                         Language:
                     </label>
                     <select class="form-select form-select-md mb-3 overflow-auto" aria-label="Large select example"
-                        id="language">
+                        id="language" multiple>
                         <option selected>All</option>
                         <option value="eng">English</option>
                         <option value="hin">Hindi</option>
@@ -99,56 +113,58 @@
                     </label>
                     <div class="row container" id="mood">
                         <div class="form-check form-switch col-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Happy</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="mood-happy">
+                            <label class="form-check-label" for="mood-happy">Happy</label>
                         </div>
                         <div class="form-check form-switch col-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Sad</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="mood-sad">
+                            <label class="form-check-label" for="mood-sad">Sad</label>
                         </div>
                         <div class="form-check form-switch col-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Chill</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="mood-chill">
+                            <label class="form-check-label" for="mood-chill">Chill</label>
                         </div>
                         <div class="form-check form-switch col-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Romantic</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="mood-romantic">
+                            <label class="form-check-label" for="mood-romantic">Romantic</label>
                         </div>
                         <div class="form-check form-switch col-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Funny</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="mood-funny">
+                            <label class="form-check-label" for="mood-funny">Funny</label>
                         </div>
                         <div class="form-check form-switch col-4">
-                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Chaotic</label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="mood-chaotic">
+                            <label class="form-check-label" for="mood-chaotic">Chaotic</label>
                         </div>
                     </div>
                 </div>
                 <div class="my-2">
                     <div class="my-2">
-                        <label for="range-rating" class="my-1">Rating: <span id="min-rating-value">0</span>-100</label>
+                        <label for="range-rating" class="my-1">Rating: <span id="min-rating">0</span>-<span
+                                id="max-rating">100</span></label>
                         <div class="position-relative">
-                            <input type="range" class="form-range" min="0" max="100" value="70" id="range-rating1" />
+                            <input type="range" class="form-range" min="0" max="100" value="0" id="range-rating-min" />
                             <input type="range" class="form-range position-absolute start-0" min="0" max="100"
-                                value="30" id="range-rating2" />
+                                value="100" id="range-rating-max" />
                         </div>
                     </div>
                     <div class="my-2">
-                        <label for="range-year" class="my-1">Year: <span id="min-year-value">1970</span>-2026</label>
+                        <label for="range-year" class="my-1">Year: <span id="min-year">1970</span>-<span
+                                id="max-year">2026</span></label>
                         <div class="position-relative">
-                            <input type="range" class="form-range" min="1970" max="2026" value="2026"
-                                id="range-year1" />
+                            <input type="range" class="form-range" min="1970" max="2026" value="1970"
+                                id="range-year-min" />
                             <input type="range" class="form-range position-absolute start-0" min="1970" max="2026"
-                                value="1996" id="range-year2" />
+                                value="2026" id="range-year-max" />
                         </div>
                     </div>
                     <div class="my-2">
-                        <label for="range-runtime" class="my-1">Runtime: <span
-                                id="min-runtime-value">10</span>-242</label>
+                        <label for="range-runtime" class="my-1">Runtime: <span id="min-runtime">10</span>-<span
+                                id="max-runtime">242</span></label>
                         <div class="position-relative">
-                            <input type="range" class="form-range" min="10" max="242" value="220" id="range-runtime1" />
+                            <input type="range" class="form-range" min="10" max="242" value="10" id="range-runtime-min" />
                             <input type="range" class="form-range position-absolute start-0" min="10" max="242"
-                                value="120" id="range-runtime2" />
+                                value="242" id="range-runtime-max" />
                         </div>
                     </div>
                 </div>
@@ -191,7 +207,7 @@
                             <h1 class="movie-title display-6">Movie Title</h1>
                         </div>
                         <div class="d-flex gap-3 mt-4 justify-content-start">
-                            <button class="btn btn-primary d-flex align-items-center gap-2 px-2 py-1 px-sm-5 py-sm-3">
+                            <button class="btn btn-primary d-flex align-items-center gap-2 px-2 py-1 px-sm-5 py-sm-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-play-fill" viewBox="0 0 16 16">
                                     <path
@@ -199,7 +215,7 @@
                                 </svg>
                                 Watch Trailer
                             </button>
-                            <button class="btn btn-secondary d-flex align-items-center gap-2 px-2 py-2 px-sm-5 py-sm-3">
+                            <button class="btn btn-secondary d-flex align-items-center gap-2 px-2 py-2 px-sm-5 py-sm-3" id="view-details">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-eye" viewBox="0 0 16 16">
                                     <path
@@ -213,8 +229,7 @@
                     </div>
                 </div>
 
-                <div
-                    class="btns-resubmit d-flex justify-content-center gap-5 container-fluid">
+                <div class="btns-resubmit d-flex justify-content-center gap-5 container-fluid">
                     <div class="d-flex flex-column justify-content-center align-items-center mx-2">
                         <button type="button" id="dismiss"
                             class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center my-2"
@@ -270,6 +285,10 @@
     <!--Footer-->
     <footer id="footer-container"></footer>
     <!--End of Navbar-->
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/random.js"></script>
 </body>
 
 </html>

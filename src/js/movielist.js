@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     resetButton.addEventListener('click', () => {
         state.genre = 'all';
         state.sort = 'popular';
-        state.year = 2018;
+        state.year = 1970;
         state.languages = ['english'];
 
         genreButtons.forEach((button) => {

@@ -133,6 +133,13 @@ body.home-page {
     box-shadow: var(--shadow-accent);
 }
 
+.hero-btn:hover {
+    background: linear-gradient(135deg, #ff6f61 0%, #e25045 100%);
+    color: #120909;
+    box-shadow: 0 16px 38px rgba(226, 80, 69, 0.35);
+}
+
+
 .ghost-btn {
     display: inline-flex;
     align-items: center;
@@ -305,6 +312,51 @@ body.home-page {
     font-weight: 700;
 }
 
+.genre-badge,
+.rating-badge,
+.year-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    min-height: 1.75rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.65rem;
+    font-family: var(--font-family-display);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.genre-badge {
+    background: linear-gradient(135deg, #8b2cff 0%, #5d14cb 100%);
+    color: #ffffff !important;
+}
+
+.rating-badge {
+    background: linear-gradient(135deg, #ffd93d 0%, #ffbf00 100%);
+    color: #111111 !important;
+}
+
+.year-badge {
+    background: linear-gradient(135deg, #ff8e80 0%, #ff5a4a 100%);
+    color: #170808 !important;
+}
+
+.rating-badge svg {
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+}
+
+.movie-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.7rem;
+}
+
 .movies-rail {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -323,11 +375,6 @@ body.home-page {
     object-fit: cover;
     border-radius: var(--radius-md);
     margin-bottom: 1rem;
-}
-
-.movie-card p {
-    color: var(--color-text-muted);
-    margin-bottom: 0.5rem;
 }
 
 .movie-card .movie-meta {

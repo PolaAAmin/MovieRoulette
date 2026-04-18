@@ -1,0 +1,148 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    background-color: #000;
+}
+
+.carousel-item .carousel-caption span{
+    font-size: 0.8rem;
+    background-color: blueviolet;
+}
+
+.carousel-item .carousel-caption .movie-rating {
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: bold;
+}
+
+.movie-info .movie-title {
+    font-weight: bold;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.movie-info p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: #ff7668;
+    color: #000;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #26262666;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ff7668;
+    color:#000;
+    transform: scale(1.1);
+    box-shadow: #555 0px 0px 10px 0px;
+}
+
+.btn-secondary:hover {
+    background-color: #26262666;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transform: scale(1.1);
+    box-shadow: #555 0px 0px 10px 0px;
+}
+
+.cast-section .header-cast h2{
+    font-family: 'plus Jakarta Sans',sans-serif;
+    font-weight: bold;
+}
+
+.cast-section .header-cast a{
+    font-family: 'inter',sans-serif;
+    text-decoration: none;
+    color: transparent;
+    background-image: linear-gradient(to right, #ff8e80 0%, #ff7668 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 700;
+}
+.cast-section .cast-member h5{
+    font-family: 'plus Jakarta Sans',sans-serif;
+    font-weight: bold;
+    letter-spacing: none;
+}
+
+.cast-section .cast-member p{
+    font-family: 'inter',sans-serif;
+    color: #adaaaa;
+    letter-spacing: 0.02rem;
+    font-size: 0.8rem;
+}
+
+.cast-section .cast-member:hover .image-fluid{
+    transition: 0.4s;
+    transform: scale(1.1);
+    cursor: pointer;
+    background-image: linear-gradient(to top, #000 0%, transparent 100%);
+}
+.movie-details {
+    background-color: #1b1919 ;
+    box-shadow: #555 0px 0px 7px 0px;
+}
+.movie-details p{
+    font-family: 'inter',sans-serif;
+    color: #adaaaa;
+    font-variant-caps: all-petite-caps;
+}
+
+.movie-details h3 {
+    font-family: 'Plus Jakarta Sans',sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.02rem;
+    font-size: 1.2rem;
+}
+
+.similar-movies-section h2{
+    font-family: 'plus Jakarta Sans',sans-serif;
+    font-weight: bold;
+    letter-spacing: none;
+}
+
+.similar-movies-section .movie h5{
+    font-family: 'Plus Jakarta Sans',sans-serif;
+    font-weight: bold;
+    letter-spacing: none;
+}
+
+.similar-movies-section .movie p{
+    font-family: 'inter',sans-serif;
+    color: #adaaaa;
+    font-variant-caps: all-petite-caps;
+}
+
+.similar-movies-section .movie span {
+    color: #ff7668;
+}
+
+.similar-movies-section .movie:hover .poster {
+    transition: 0.4s;
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: #ff7668 0px 0px 10px ;
+}
+
+.similar-movies-section .movie:hover h5 {
+    color: #ff7668;
+}
+
+.movie-list, .cast-list{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #ff7668 transparent;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="MovieRoulette movie list page">
+    <meta name="author" content="MovieRoulette Team">
+    <meta name="keywords" content="movies, catalog, genres, ratings">
+    <title>MovieRoulette | Movie List</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/base/navbar.css">
+    <link rel="stylesheet" href="../css/base/footer.css">
+    <link rel="stylesheet" href="../css/movielist.css">
+</head>
+
+<body class="movie-list-page text-white" data-page="movies">
+    <div id="navbar-container"></div>
+
+    <main class="movie-list-main">
+        <div class="container">
+            <section class="page-intro">
+                <span class="eyebrow">Movie Catalog</span>
+                <h1>Browse movies</h1>
+                <p>
+                    Browse movies and sort them your way.
+                </p>
+            </section>
+
+            <section class="catalog-shell">
+                <aside class="filter-panel glass-panel">
+                    <div class="panel-title">
+                        <h2>Filters</h2>
+                        <button class="reset-btn" id="resetFilters" type="button">Reset</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Genre</h3>
+                        <div class="pill-list">
+                            <button class="genre-pill active" type="button" data-genre="all">All</button>
+                            <button class="genre-pill" type="button" data-genre="action">Action</button>
+                            <button class="genre-pill" type="button" data-genre="drama">Drama</button>
+                            <button class="genre-pill" type="button" data-genre="sci-fi">Sci-Fi</button>
+                            <button class="genre-pill" type="button" data-genre="animation">Animation</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Release Year</h3>
+                        <input id="yearRange" type="range" min="1970" max="2026" value="1970">
+                        <div class="range-display">From <span id="yearOutput">1970+</span></div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Language</h3>
+                        <label>
+                            <input class="language-filter" type="checkbox" value="english" checked>
+                            English
+                        </label>
+                        <label>
+                            <input class="language-filter" type="checkbox" value="korean">
+                            Korean
+                        </label>
+                        <label>
+                            <input class="language-filter" type="checkbox" value="spanish">
+                            Spanish
+                        </label>
+                    </div>
+                </aside>
+
+                <section class="results-panel glass-panel">
+                    <div class="results-toolbar">
+                        <div>
+                            <h2>Movie Results</h2>
+                            <p id="resultCount">0 movies found</p>
+                        </div>
+                        <div class="sort-list">
+                            <button class="sort-btn active" type="button" data-sort="popular">Popular</button>
+                            <button class="sort-btn" type="button" data-sort="rating">Top Rated</button>
+                            <button class="sort-btn" type="button" data-sort="newest">Newest</button>
+                        </div>
+                    </div>
+
+                    <div class="movies-grid py-2" id="moviesGrid">
+                        <article class="movie-tile glass-panel" data-genre="action" data-year="2024" data-language="english" data-rating="8.6" data-popularity="98">
+                            <img src="https://placehold.co/320x460/1f1f1f/ffffff?text=Velocity+Run" alt="Movie">
+                            <div>
+                                <div class="movie-badges">
+                                    <span class="genre-badge">Action</span>
+                                    <span class="rating-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                        8.6
+                                    </span>
+                                    <span class="info-badge">English</span>
+                                </div>
+                                <h3 class="mt-3">Velocity Run</h3>
+                                <p>A former stunt driver gets pulled into a one-night chase across the city to stop a high-tech robbery.</p>
+                                <div class="movie-facts">
+                                    <span>2024</span>
+                                    <span>2h 05m</span>
+                                    <span>Adrenaline</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="movie-tile glass-panel" data-genre="drama" data-year="2023" data-language="english" data-rating="8.9" data-popularity="91">
+                            <img src="https://placehold.co/320x460/232323/ffffff?text=Glass+Letters" alt="Glass Letters poster">
+                            <div>
+                                <div class="movie-badges">
+                                    <span class="genre-badge">Drama</span>
+                                    <span class="rating-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                        8.9
+                                    </span>
+                                    <span class="info-badge">English</span>
+                                </div>
+                                <h3 class="mt-3">Glass Letters</h3>
+                                <p>A journalist uncovers a family secret through decades of unsent letters and one final interview.</p>
+                                <div class="movie-facts">
+                                    <span>2023</span>
+                                    <span>1h 56m</span>
+                                    <span>Emotional</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="movie-tile glass-panel" data-genre="sci-fi" data-year="2025" data-language="korean" data-rating="8.4" data-popularity="95">
+                            <img src="https://placehold.co/320x460/202020/ffffff?text=Orbit+Code" alt="Orbit Code poster">
+                            <div>
+                                <div class="movie-badges">
+                                    <span class="genre-badge">Sci-Fi</span>
+                                    <span class="rating-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                        8.4
+                                    </span>
+                                    <span class="info-badge">Korean</span>
+                                </div>
+                                <h3 class="mt-3">Orbit Code</h3>
+                                <p>Engineers aboard a failing station race to decode a message that may rewrite human survival.</p>
+                                <div class="movie-facts">
+                                    <span>2025</span>
+                                    <span>2h 11m</span>
+                                    <span>Futuristic</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="movie-tile glass-panel" data-genre="animation" data-year="2022" data-language="spanish" data-rating="8.2" data-popularity="87">
+                            <img src="https://placehold.co/320x460/262626/ffffff?text=Skyline+Tales" alt="Skyline Tales poster">
+                            <div>
+                                <div class="movie-badges">
+                                    <span class="genre-badge">Animation</span>
+                                    <span class="rating-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                        8.2
+                                    </span>
+                                    <span class="info-badge">Spanish</span>
+                                </div>
+                                <h3 class="mt-3">Skyline Tales</h3>
+                                <p>Two young inventors build a flying city from scraps and learn what home really means.</p>
+                                <div class="movie-facts">
+                                    <span>2022</span>
+                                    <span>1h 44m</span>
+                                    <span>Family</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="movie-tile glass-panel" data-genre="action" data-year="2021" data-language="english" data-rating="7.9" data-popularity="82">
+                            <img src="https://placehold.co/320x460/292929/ffffff?text=Shadow+Protocol" alt="Shadow Protocol poster">
+                            <div>
+                                <div class="movie-badges">
+                                    <span class="genre-badge">Action</span>
+                                    <span class="rating-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                        7.9
+                                    </span>
+                                    <span class="info-badge">English</span>
+                                </div>
+                                <h3 class="mt-3">Shadow Protocol</h3>
+                                <p>An ex-agent returns for one final mission when a digital weapon begins targeting civilians.</p>
+                                <div class="movie-facts">
+                                    <span>2021</span>
+                                    <span>2h 00m</span>
+                                    <span>Spy Thriller</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="movie-tile glass-panel" data-genre="drama" data-year="2025" data-language="english" data-rating="9.1" data-popularity="96">
+                            <img src="https://placehold.co/320x460/2d2d2d/ffffff?text=After+the+Rain" alt="After the Rain poster">
+                            <div>
+                                <div class="movie-badges">
+                                    <span class="genre-badge">Drama</span>
+                                    <span class="rating-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                        </svg>
+                                        9.1
+                                    </span>
+                                    <span class="info-badge">English</span>
+                                </div>
+                                <h3 class="mt-3">After the Rain</h3>
+                                <p>A father and daughter reconnect while rebuilding their flood-damaged neighborhood theater.</p>
+                                <div class="movie-facts">
+                                    <span>2025</span>
+                                    <span>2h 08m</span>
+                                    <span>Character Driven</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/movielist.js"></script>
+</body>
+
+</html>

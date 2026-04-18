@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="MovieRoulette home page">
+    <meta name="author" content="MovieRoulette Team">
+    <meta name="keywords" content="movies, streaming, recommendations, featured films">
+    <title>MovieRoulette | Home</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/base/navbar.css">
+    <link rel="stylesheet" href="../css/base/footer.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body class="home-page text-white" data-page="home">
+    <div id="navbar-container"></div>
+
+    <main class="home-main">
+        <section class="home-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-copy">
+                        <span class="eyebrow">Tonight's Spotlight</span>
+                        <h1>Discover your next <span class="text-gradient">cinematic obsession</span>.</h1>
+                        <p>
+                            MovieRoulette brings together streaming-style browsing and mood-first discovery.
+                            Jump into fresh releases, fan favorites, and quick filters that help you find the right
+                            movie in minutes.
+                        </p>
+                        <div class="hero-meta">
+                            <span>4K Premium Picks</span>
+                            <span>Handpicked Genres</span>
+                            <span>Fast Mood Filters</span>
+                        </div>
+                        <div class="hero-actions">
+                            <a class="hero-btn" href="./MovieList.html">Browse Movies</a>
+                            <a class="ghost-btn" href="./RandomGenrator.html">Try Randomizer</a>
+                        </div>
+                    </div>
+
+                    <aside class="hero-side glass-panel">
+                        <h2>Why MovieRoulette works</h2>
+                        <p>
+                            Instead of endless scrolling, we guide users with concise categories, strong visuals, and
+                            ready-made moods for movie night.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <strong>120+</strong>
+                                <span>Curated titles</span>
+                            </div>
+                            <div class="hero-stat">
+                                <strong>18</strong>
+                                <span>Popular genres</span>
+                            </div>
+                            <div class="hero-stat">
+                                <strong>7</strong>
+                                <span>Mood shortcuts</span>
+                            </div>
+                            <div class="hero-stat">
+                                <strong>1 tap</strong>
+                                <span>To start exploring</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="home-section">
+            <div class="container">
+                <div class="home-section-header">
+                    <div>
+                        <h2 class="section-heading mb-2">Featured Tonight</h2>
+                        <p class="home-section-subtext">A simplified hero follow-up with one immersive featured title.
+                        </p>
+                    </div>
+                    <a class="ghost-btn" href="./MovieDetails.html">Open Details</a>
+                </div>
+
+                <article class="spotlight-card glass-panel">
+                    <div class="spotlight-poster">
+                        <img src="https://placehold.co/520x720/1a1a1a/ffffff?text=Featured+Poster"
+                            alt="Featured movie poster">
+                    </div>
+                    <div class="spotlight-body">
+                        <div class="spotlight-tags">
+                            <span class="genre-badge">genre1</span>
+                            <span class="genre-badge">genre2</span>
+                            <span class="year-badge">year</span>
+                        </div>
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            In sint sit voluptatem totam ullam iure dolorem aspernatur, repellat quia? Esse.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="hero-btn" href="./MovieDetails.html">Watch Trailer</a>
+                            <a class="ghost-btn" href="./MovieList.html">More Like This</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="home-section">
+            <div class="container">
+                <div class="home-section-header">
+                    <div>
+                        <h2 class="section-heading mb-2">Trending Right Now</h2>
+                        <p class="home-section-subtext">Compact movie cards that react to the quick filters above.</p>
+                    </div>
+                    <a class="ghost-btn" href="./MovieList.html">See Full List</a>
+                </div>
+
+                <div class="movies-rail">
+                    <article class="movie-card glass-panel" data-genre="action">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAMFBMVEXd3+TM0dmzusawuMW3vsm0u8fR1NvJzda7wczc3uO/xc/CyNLIzNXX2uDP09rBx9Ah1msAAAACiklEQVR4nO3a3XrqIBCFYZmBQIDE+7/bDVWbbKtpeqDVzvce+ZMDWA8MiBwOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5mciUn70MQFV20dyF4n3Jx02838cnm1Pvfe9+lxemDnpRqmn+7mU805tbhOEzTON7+fpymIbbY8u3v/6Kkec/EmJKmh7flRUTNO5/MGh/akpcxStj9aJBHtuR1OK27n63qHtiS15Fl/yo7yd5p9t78T+aD+Ie144WMYb2YDDkdh42nU7CwHP83HYr0bexGffnJRHtfk5bP17P66qqX+yOl2MhElkySRudc3CikZSOvv2NYTRUvrpP729VqLpN8HifHu09XtZFJXL320cWtemIvk0NRkc11x2Amh6GkstXraDCTa1M9xvUujUwOQ2hTya+2JGQyiOaYNSyhmM9kECltbc6rkWI9k3MkLRTxl5piMJN1Of2MpIeSzt9Yy2SsyS+H1atInEuXI1tjmYxJQpBL6WjldYlkCcVYJklSnyWnRea/UdL50+7WSianrXwrpKfS0UO5GiVLKFb29h+ZVPXneqph/DJKuiDOViZOwqXvbTsSbkQyx6CzkfOTj3O2WSR+9j7fGiX9XCXIZCQTPbafNVpXnS83I3GuSjByRi15DFcVdb6diSsiwUImY0hJj3dC+BqKif93Dl4k74zEzcHE/4BtY5L2RuL2X8t4b27/MGlLko17BaOG78M4C2qinPS96d7Jk35wVeXNtV9/8ftAXPR27rP1e48hlXonl4/NSqwliaV7j63OJtW2H7tckL3SPhfRNsN+u5lPdrlHrV8ZvUcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPNU/hloRSoi0zPIAAAAASUVORK5CYII="
+                            alt="Movie Poster image">
+                        <div class="movie-badges">
+                            <span class="genre-badge">Genre</span>
+                            <span class="rating-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                                4.5
+                            </span>
+                        </div>
+                        <h3>Movie name</h3>
+                        <div class="movie-meta">
+                            <span>year</span>
+                            <span>2h 00m</span>
+                        </div>
+                    </article>
+                    <article class="movie-card glass-panel" data-genre="drama">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAMFBMVEXd3+TM0dmzusawuMW3vsm0u8fR1NvJzda7wczc3uO/xc/CyNLIzNXX2uDP09rBx9Ah1msAAAACiklEQVR4nO3a3XrqIBCFYZmBQIDE+7/bDVWbbKtpeqDVzvce+ZMDWA8MiBwOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5mciUn70MQFV20dyF4n3Jx02838cnm1Pvfe9+lxemDnpRqmn+7mU805tbhOEzTON7+fpymIbbY8u3v/6Kkec/EmJKmh7flRUTNO5/MGh/akpcxStj9aJBHtuR1OK27n63qHtiS15Fl/yo7yd5p9t78T+aD+Ie144WMYb2YDDkdh42nU7CwHP83HYr0bexGffnJRHtfk5bP17P66qqX+yOl2MhElkySRudc3CikZSOvv2NYTRUvrpP729VqLpN8HifHu09XtZFJXL320cWtemIvk0NRkc11x2Amh6GkstXraDCTa1M9xvUujUwOQ2hTya+2JGQyiOaYNSyhmM9kECltbc6rkWI9k3MkLRTxl5piMJN1Of2MpIeSzt9Yy2SsyS+H1atInEuXI1tjmYxJQpBL6WjldYlkCcVYJklSnyWnRea/UdL50+7WSianrXwrpKfS0UO5GiVLKFb29h+ZVPXneqph/DJKuiDOViZOwqXvbTsSbkQyx6CzkfOTj3O2WSR+9j7fGiX9XCXIZCQTPbafNVpXnS83I3GuSjByRi15DFcVdb6diSsiwUImY0hJj3dC+BqKif93Dl4k74zEzcHE/4BtY5L2RuL2X8t4b27/MGlLko17BaOG78M4C2qinPS96d7Jk35wVeXNtV9/8ftAXPR27rP1e48hlXonl4/NSqwliaV7j63OJtW2H7tckL3SPhfRNsN+u5lPdrlHrV8ZvUcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPNU/hloRSoi0zPIAAAAASUVORK5CYII="
+                            alt="Movie Poster image">
+                        <div class="movie-badges">
+                            <span class="genre-badge">Genre</span>
+                            <span class="rating-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                                4.5
+                            </span>
+                        </div>
+                        <h3>Movie name</h3>
+                        <div class="movie-meta">
+                            <span>year</span>
+                            <span>2h 00m</span>
+                        </div>
+                    </article>
+                    <article class="movie-card glass-panel" data-genre="sci-fi">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAMFBMVEXd3+TM0dmzusawuMW3vsm0u8fR1NvJzda7wczc3uO/xc/CyNLIzNXX2uDP09rBx9Ah1msAAAACiklEQVR4nO3a3XrqIBCFYZmBQIDE+7/bDVWbbKtpeqDVzvce+ZMDWA8MiBwOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5mciUn70MQFV20dyF4n3Jx02838cnm1Pvfe9+lxemDnpRqmn+7mU805tbhOEzTON7+fpymIbbY8u3v/6Kkec/EmJKmh7flRUTNO5/MGh/akpcxStj9aJBHtuR1OK27n63qHtiS15Fl/yo7yd5p9t78T+aD+Ie144WMYb2YDDkdh42nU7CwHP83HYr0bexGffnJRHtfk5bP17P66qqX+yOl2MhElkySRudc3CikZSOvv2NYTRUvrpP729VqLpN8HifHu09XtZFJXL320cWtemIvk0NRkc11x2Amh6GkstXraDCTa1M9xvUujUwOQ2hTya+2JGQyiOaYNSyhmM9kECltbc6rkWI9k3MkLRTxl5piMJN1Of2MpIeSzt9Yy2SsyS+H1atInEuXI1tjmYxJQpBL6WjldYlkCcVYJklSnyWnRea/UdL50+7WSianrXwrpKfS0UO5GiVLKFb29h+ZVPXneqph/DJKuiDOViZOwqXvbTsSbkQyx6CzkfOTj3O2WSR+9j7fGiX9XCXIZCQTPbafNVpXnS83I3GuSjByRi15DFcVdb6diSsiwUImY0hJj3dC+BqKif93Dl4k74zEzcHE/4BtY5L2RuL2X8t4b27/MGlLko17BaOG78M4C2qinPS96d7Jk35wVeXNtV9/8ftAXPR27rP1e48hlXonl4/NSqwliaV7j63OJtW2H7tckL3SPhfRNsN+u5lPdrlHrV8ZvUcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPNU/hloRSoi0zPIAAAAASUVORK5CYII="
+                            alt="Movie Poster image">
+                        <div class="movie-badges">
+                            <span class="genre-badge">Genre</span>
+                            <span class="rating-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                                4.5
+                            </span>
+                        </div>
+                        <h3>Movie name</h3>
+                        <div class="movie-meta">
+                            <span>year</span>
+                            <span>2h 00m</span>
+                        </div>
+                    </article>
+                    <article class="movie-card glass-panel" data-genre="animation">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAMFBMVEXd3+TM0dmzusawuMW3vsm0u8fR1NvJzda7wczc3uO/xc/CyNLIzNXX2uDP09rBx9Ah1msAAAACiklEQVR4nO3a3XrqIBCFYZmBQIDE+7/bDVWbbKtpeqDVzvce+ZMDWA8MiBwOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5mciUn70MQFV20dyF4n3Jx02838cnm1Pvfe9+lxemDnpRqmn+7mU805tbhOEzTON7+fpymIbbY8u3v/6Kkec/EmJKmh7flRUTNO5/MGh/akpcxStj9aJBHtuR1OK27n63qHtiS15Fl/yo7yd5p9t78T+aD+Ie144WMYb2YDDkdh42nU7CwHP83HYr0bexGffnJRHtfk5bP17P66qqX+yOl2MhElkySRudc3CikZSOvv2NYTRUvrpP729VqLpN8HifHu09XtZFJXL320cWtemIvk0NRkc11x2Amh6GkstXraDCTa1M9xvUujUwOQ2hTya+2JGQyiOaYNSyhmM9kECltbc6rkWI9k3MkLRTxl5piMJN1Of2MpIeSzt9Yy2SsyS+H1atInEuXI1tjmYxJQpBL6WjldYlkCcVYJklSnyWnRea/UdL50+7WSianrXwrpKfS0UO5GiVLKFb29h+ZVPXneqph/DJKuiDOViZOwqXvbTsSbkQyx6CzkfOTj3O2WSR+9j7fGiX9XCXIZCQTPbafNVpXnS83I3GuSjByRi15DFcVdb6diSsiwUImY0hJj3dC+BqKif93Dl4k74zEzcHE/4BtY5L2RuL2X8t4b27/MGlLko17BaOG78M4C2qinPS96d7Jk35wVeXNtV9/8ftAXPR27rP1e48hlXonl4/NSqwliaV7j63OJtW2H7tckL3SPhfRNsN+u5lPdrlHrV8ZvUcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPNU/hloRSoi0zPIAAAAASUVORK5CYII="
+                            alt="Movie Poster image">
+                        <div class="movie-badges">
+                            <span class="genre-badge">Genre</span>
+                            <span class="rating-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                </svg>
+                                4.5
+                            </span>
+                        </div>
+                        <h3>Movie name</h3>
+                        <div class="movie-meta">
+                            <span>year</span>
+                            <span>2h 00m</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+
+</html>

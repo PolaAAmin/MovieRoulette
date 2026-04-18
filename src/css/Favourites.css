@@ -1,85 +1,86 @@
 body {
-  background: #0b0b0b;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+    background: var(--color-black);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-display);
 }
 
 /* HERO */
 .hero {
-  padding: 50px 0;
+    padding: 50px 0;
 }
 
 .hero .small {
-  color: #ff5c5c;
-  letter-spacing: 2px;
+    color: var(--color-accent);
+    letter-spacing: 2px;
 }
 
 .hero span {
-  color: #ff5c5c;
+    color: var(--color-accent);
 }
 
 /* CARD */
 .card {
-  background: #111;
-  border: none;
-  border-radius: 20px;
-  overflow: hidden;
+    background: var(--color-bg-end)q;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .card-img-top {
-  height: 350px;
-  object-fit: cover;
+    height: 350px;
+    object-fit: cover;
 }
 
 /* INFO */
 .info {
-  background: #111;
+    background: var(--color-bg-end);
 }
 
 /* TAG */
 .tag {
-  background-color: #3b1f1f;
-  color: #ff6b6b;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 8px;
+    background-color: #3b1f1f;
+    color: #ff6b6b;
+    font-size: var(--font-size-sm);
+    padding: 6px 10px;
+    border-radius: 8px;
 }
 
 /* RATE */
 .rate {
-  color: gold;
+    color: gold;
 }
 
 /* BUTTON */
 .watch-btn {
-  background: #fff;
-  color: #000;
-  border-radius: 10px;
+    background: var(--color-accent);
+    color: var(--color-black);
+    border-radius: 10px;
 }
 
 /* EYE */
 .eye-btn {
-  width: 50px;
-  height: 50px;
-  background: #1f1f1f;
-  border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    background: #1f1f1f;
+    border-radius: 12px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  cursor: pointer;
-  transition: 0.3s;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .eye-btn svg {
-  width: 22px;
-  height: 22px;
-  stroke: #fff;
-  fill: none;
-  stroke-width: 2;
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
+    fill: none;
+    stroke-width: 2;
 }
+
 .eye-btn:hover {
-  background: #2a2a2a;
-  transform: scale(1.05);
+    background: #2a2a2a;
+    transform: scale(1.05);
 }

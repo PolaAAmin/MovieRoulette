@@ -1,36 +1,31 @@
 body {
-    background-color: black;
+    background-color: var(--color-black);
 }
 
 .hero1 {
-
     margin-top: 70px;
     margin-bottom: 220px;
 }
 
 .Poppins {
-    font-family: 'Poppins', sans-serif;
-
+    font-family: var(--font-family-label);
 }
 
 .Wcolor {
-    color: rgb(227, 233, 239);
-
+    color: var(--color-text-tertiary);
 }
 
 .Gcolor {
-    color: rgb(119, 120, 121);
-
+    color: var(--color-text-subtle);
 }
 
 .Simplify {
-    font-family: 'Poppins', sans-serif;
-    font-size: 80px;
-    font-weight: 900w;
+    font-family: var(--font-family-display);
+    font-weight: bolder;
 }
 
 .gradient {
-    background: linear-gradient(to right, #ff7a7a, #b36bff);
+    background: var(--gradient-brand-inline);
     background-clip: text;
     /* this for making the gradient only on the text */
     -webkit-text-fill-color: transparent;
@@ -53,8 +48,5 @@ body {
 }
 
 .AnotherGrad {
-    background:
-        radial-gradient(circle at 15%, rgba(62, 54, 52, 0.15), transparent 40%),
-        radial-gradient(circle at 95%, rgba(150, 100, 255, 0.15), transparent 40%),
-        linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    background: var(--gradient-page-background);
 }

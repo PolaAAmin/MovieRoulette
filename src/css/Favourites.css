@@ -57,30 +57,4 @@ body {
     border-radius: 10px;
 }
 
-/* EYE */
-.eye-btn {
-    width: 50px;
-    height: 50px;
-    background: #1f1f1f;
-    border-radius: 12px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.eye-btn svg {
-    width: 22px;
-    height: 22px;
-    stroke: #fff;
-    fill: none;
-    stroke-width: 2;
-}
-
-.eye-btn:hover {
-    background: #2a2a2a;
-    transform: scale(1.05);
-}
+/* Eye*/

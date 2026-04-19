@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'NodeJS' // Must match the name configured in Jenkins > Global Tool Configuration
+    }
+
+    environment {
+        CI = 'true'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'npm test -- --watchAll=false --passWithNoTests'
+            }
+            post {
+                always {
+                    junit testResults: 'test-results/**/*.xml', allowEmptyResults: true
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'build/**/*', fingerprint: true
+                }
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully. Build artifacts are archived.'
+        }
+        failure {
+            echo 'Pipeline failed. Check the logs above for details.'
+        }
+        always {
+            cleanWs() // Clean workspace after every run
+        }
+    }
+}

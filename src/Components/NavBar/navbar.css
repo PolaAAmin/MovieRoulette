@@ -1,5 +1,5 @@
 nav {
-    background: var(--color-surface-dark-22); 
+    background: black;
     backdrop-filter: blur(var(--blur-glass));
     -webkit-backdrop-filter: blur(var(--blur-glass));
     border-bottom: var(--border-strong);

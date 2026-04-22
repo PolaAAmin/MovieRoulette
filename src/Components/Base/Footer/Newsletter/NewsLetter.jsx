@@ -1,6 +1,6 @@
 import React from 'react'
-import PillInput from '../../Global/PillInput/PillInput'
-import PillBtn from '../../Global/PillBtn/PillBtn'
+import PillInput from '../../../Global/PillInput/PillInput'
+import PillBtn from '../../../Global/PillBtn/PillBtn'
 
 export default function NewsLetter() {
     return (

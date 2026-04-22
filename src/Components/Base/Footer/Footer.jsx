@@ -6,7 +6,6 @@ import NewsLetter from './Newsletter/NewsLetter'
 import Copyrights from './Copyrights/Copyrights'
 import './footer.css'
 
-
 export default function Footer() {
     return (
         <>

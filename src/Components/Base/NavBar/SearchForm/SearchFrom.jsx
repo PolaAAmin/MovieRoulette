@@ -1,5 +1,5 @@
 import React from 'react'
-import PillInput from '../../Global/PillInput/PillInput'
+import PillInput from '../../../Global/PillInput/PillInput.jsx'
 
 export default function SearchFrom() {
     // const search = document.getElementById("search");

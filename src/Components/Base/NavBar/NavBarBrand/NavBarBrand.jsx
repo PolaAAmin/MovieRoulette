@@ -1,5 +1,5 @@
 import React from 'react';
-import brandLogo from '../../../assets/brandLogo.png'
+import brandLogo from '../../../../assets/brandLogo.png'
 
 
 export default function NavBarBrand() {

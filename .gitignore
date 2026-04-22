@@ -1,6 +1,9 @@
 #Bootstrap
 bootstrap-5.3.8-dist/
 
+#Domain Name
+CNAME
+
 # Logs
 logs
 *.log

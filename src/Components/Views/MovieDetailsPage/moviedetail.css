@@ -5,9 +5,11 @@ body {
     background-color: var(--color-black);
 }
 
-.carousel-item .carousel-caption span{
-    font-size: var(--font-size-label);
+.carousel-item .carousel-caption .genre{
+    font-size: calc(var(--font-size-label)+3px);
+    font-weight: bold;
     background-color: var(--color-badge-category);
+    font-variant-caps: all-petite-caps;
 }
 
 .carousel-item .carousel-caption .movie-rating {

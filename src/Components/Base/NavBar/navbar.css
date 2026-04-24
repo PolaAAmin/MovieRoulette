@@ -4,6 +4,7 @@ nav {
     -webkit-backdrop-filter: blur(var(--blur-glass));
     border-bottom: var(--border-strong);
     color: var(--color-text-primary);
+    z-index: 999999;
 }
 
 .navbar-dark .navbar-brand .brand-name {
@@ -68,7 +69,6 @@ ul.navbar-nav .nav-item button {
     background-image: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
 }
 
 ul.navbar-nav .nav-item button:active {
@@ -109,11 +109,6 @@ ul.navbar-nav .nav-item .btn-group .dropdown-menu .dropdown-item:hover {
     background-color: var(--color-bg-dropdown-hover);
     color: var(--color-text-accent-hover);
 }
-
-
-
-
-
 
 @media (max-width: 992px) {
     .navbar-dark .navbar-nav .nav-link {

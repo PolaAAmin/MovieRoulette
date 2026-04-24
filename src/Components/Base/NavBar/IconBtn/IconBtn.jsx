@@ -13,7 +13,7 @@ export default function IconBtn(props) {
                 >
                     {props.icon}
                 </button>
-                <ul className="dropdown-menu dropdown-menu-lg-end mt-4">
+                <ul className="dropdown-menu dropdown-menu-end mt-2">
                     <li>
                         <a className="dropdown-item" href="#">
                             {props.title}

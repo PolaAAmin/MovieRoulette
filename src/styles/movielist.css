@@ -12,10 +12,6 @@
     padding: 3rem 0 4rem;
 }
 
-/* .eyebrow moved to src/styles/root.css */
-
-/* .glass-panel moved to src/styles/root.css */
-
 .page-intro {
     margin-bottom: 2rem;
 }
@@ -137,8 +133,50 @@
     cursor: pointer;
 }
 
-.filter-panel input[type="checkbox"] {
-    accent-color: var(--color-accent);
+/* Fully custom checkbox — accent-color alone only themes the checked fill
+   in supporting browsers and leaves the UNCHECKED state as the browser's
+   native white/light square, which clashes with this dark theme.
+   appearance:none + a hand-drawn checkmark themes both states reliably. */
+.filter-check input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: var(--color-surface-white-04);
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    margin: 0;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.filter-check input[type="checkbox"]:hover {
+    border-color: var(--color-accent-border);
+}
+
+.filter-check input[type="checkbox"]:checked {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.filter-check input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--color-text-on-accent);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.filter-check input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 118, 104, 0.25);
 }
 
 .results-toolbar {
@@ -257,8 +295,6 @@
     font-size: 0.82rem;
     font-weight: 600;
 }
-
-/* Badge and movie-badges utilities moved to src/styles/root.css */
 
 .movie-list-page .info-badge {
     background: var(--color-surface-white-05) !important;

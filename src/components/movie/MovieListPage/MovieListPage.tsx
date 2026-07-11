@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { Suspense } from "react";
+import React, { useMemo, useState, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Genre, Movie } from "@/lib/tmdb/types";
-import { useSearchStore, useFavouritesStore } from "@/store";
+import { useSearchStore } from "@/store";
 import { posterUrl, formatRating, formatYear, formatRuntime } from "@/lib/tmdb/images";
 import { toast } from "sonner";
 import { MovieTileSkeletonGrid } from "@/components/ui/Skeletons";
@@ -25,77 +24,63 @@ import { useOptimisticFavourites } from "@/features/favourites";
 
 type MediaType = "movie" | "series";
 
+interface DiscoverParams {
+  with_genres?: string;
+  with_original_language?: string;
+  sort_by: string;
+  page: number;
+  [key: string]: string | number | undefined;
+}
+
 export default function MovieListPage({ mediaType = "movie" }: { mediaType?: MediaType }) {
   const isTV = mediaType === "series";
   const navigate = useNavigate();
   const searchQuery = useSearchStore((s) => s.searchQuery);
-  const { optimisticFavourites, isFavourite, toggleFavourite: optimisticToggleFavourite } = useOptimisticFavourites();
+  const { isFavourite, toggleFavourite: optimisticToggleFavourite } = useOptimisticFavourites();
 
-  // Load genres using suspense
+  // Load genres using suspense — this only suspends once on first mount,
+  // not on every filter change, so it's fine to leave at the page level.
   const genresResult = useGenres();
-
-  // Set up genre list with fallback
   const genres = genresResult?.genres || [];
   const genreList = genres.length > 0 ? genres : [...DEFAULT_GENRES];
 
-  // Initialize genre selections
   const [selectedGenres, setSelectedGenres] = useState<number[]>([]);
+  // Committed value — this is what actually drives the fetch.
   const [yearFrom, setYearFrom] = useState(1970);
+  // Draft value — updates live while dragging the slider, purely visual.
+  // Only gets copied into `yearFrom` (and triggers a refetch) once the user
+  // releases the thumb, instead of on every intermediate tick.
+  const [yearFromDraft, setYearFromDraft] = useState(1970);
   const [langs, setLangs] = useState<string[]>(["en"]);
   const [sort, setSort] = useState<SortKey>("popular");
 
-  // Pagination state
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  // Prepare parameters for discover API
-  const genreStr =
-    selectedGenres.length > 0 ? selectedGenres.join("|") : undefined;
+  const genreStr = selectedGenres.length > 0 ? selectedGenres.join("|") : undefined;
   const sortKey = isTV ? TV_SORT[sort] : MOVIE_SORT[sort];
   const languageParam = langs.length === 1 ? langs[0] : undefined;
 
-  // Build discover params
-  const discoverParams = {
-    with_genres: genreStr,
-    with_original_language: languageParam,
-    ...(yearFrom > 1970
-      ? {
-          [isTV ? "first_air_date.gte" : "primary_release_date.gte"]: `${yearFrom}-01-01`,
-        }
-      : {}),
-    sort_by: sortKey,
-    ...(sort === "rating" ? { "vote_average.gte": 5 } : {}),
-    page,
-  };
+  const discoverParams: DiscoverParams = useMemo(
+    () => ({
+      with_genres: genreStr,
+      with_original_language: languageParam,
+      ...(yearFrom > 1970
+        ? { [isTV ? "first_air_date.gte" : "primary_release_date.gte"]: `${yearFrom}-01-01` }
+        : {}),
+      sort_by: sortKey,
+      ...(sort === "rating" ? { "vote_average.gte": 5 } : {}),
+      page,
+    }),
+    [genreStr, languageParam, yearFrom, isTV, sortKey, sort, page]
+  );
 
-  // Fetch data using suspense-enabled hooks
-  let movies: Movie[] = [];
-  let total: number = 0;
-
-  if (searchQuery.trim()) {
-    // Use the suspense-enabled search hook
-    const searchResults = useSearch(searchQuery);
-    movies = (searchResults?.results || []).filter((m: Movie) => m.poster_path || m.backdrop_path);
-    total = searchResults?.total_pages || 0;
-  } else {
-    // Discover mode
-    if (isTV) {
-      const discoverResults = useDiscoverTV(discoverParams);
-      movies = (discoverResults?.results || []).filter((m: Movie) => m.poster_path || m.backdrop_path);
-      total = discoverResults?.total_pages || 0;
-    } else {
-      const discoverResults = useDiscover(discoverParams);
-      movies = (discoverResults?.results || []).filter((m: Movie) => m.poster_path || m.backdrop_path);
-      total = discoverResults?.total_pages || 0;
+  function commitYearFrom() {
+    if (yearFromDraft !== yearFrom) {
+      setYearFrom(yearFromDraft);
+      setPage(1);
     }
   }
-
-  // Set total pages (this runs after suspense resolves)
-  React.useEffect(() => {
-    if (total > 0) {
-      setTotalPages(total);
-    }
-  }, [total]);
 
   const genreName = (id?: number): string => {
     if (!id) return isTV ? "Series" : "Movie";
@@ -111,6 +96,7 @@ export default function MovieListPage({ mediaType = "movie" }: { mediaType?: Med
   function reset() {
     setSelectedGenres([]);
     setYearFrom(1970);
+    setYearFromDraft(1970);
     setLangs(["en"]);
     setSort("popular");
     setPage(1);
@@ -164,13 +150,13 @@ export default function MovieListPage({ mediaType = "movie" }: { mediaType?: Med
                     type="range"
                     min={1970}
                     max={2026}
-                    value={yearFrom}
-                    onChange={(e) => {
-                      setYearFrom(Number(e.target.value));
-                      setPage(1);
-                    }}
+                    value={yearFromDraft}
+                    onChange={(e) => setYearFromDraft(Number(e.target.value))}
+                    onMouseUp={commitYearFrom}
+                    onTouchEnd={commitYearFrom}
+                    onKeyUp={commitYearFrom}
                   />
-                  <div className="range-display">From <span>{yearFrom}+</span></div>
+                  <div className="range-display">From <span>{yearFromDraft}+</span></div>
                 </div>
 
                 <div className="filter-group">
@@ -181,10 +167,7 @@ export default function MovieListPage({ mediaType = "movie" }: { mediaType?: Med
                         type="checkbox"
                         value={l.value}
                         checked={langs.includes(l.value)}
-                        onChange={() => {
-                          toggleLang(l.value);
-                          setPage(1);
-                        }}
+                        onChange={() => toggleLang(l.value)}
                       />
                       {l.label}
                     </label>
@@ -198,9 +181,6 @@ export default function MovieListPage({ mediaType = "movie" }: { mediaType?: Med
                     <h2>
                       {searchQuery ? "Search Results" : isTV ? "Series Results" : "Movie Results"}
                     </h2>
-                    <p>
-                      {movies.length} {itemLabel} found
-                    </p>
                   </div>
                   <div className="sort-list">
                     {([
@@ -223,61 +203,147 @@ export default function MovieListPage({ mediaType = "movie" }: { mediaType?: Med
                   </div>
                 </div>
 
-                {/* Loading state handled by Suspense in routes.tsx */}
-                {movies.length > 0 ? (
-                  <>
-                    <div className="movies-grid">
-                      {movies.map((m) => (
-                        <MovieTile
-                          key={m.id}
-                          movie={m}
-                          genreName={genreName(m.genre_ids?.[0])}
-                          onOpen={() => navigate(`/movie/${m.id}`)}
-                          isFavourite={isFavourite}
-                          toggleFavourite={optimisticToggleFavourite}
-                        />
-                      ))}
-                    </div>
-
-                    {!searchQuery && totalPages > 1 && (
-                      <div className="d-flex justify-content-center gap-2 mt-4">
-                        <button
-                          className="ghost-btn"
-                          disabled={page <= 1}
-                          onClick={() => setPage((p) => Math.max(1, p - 1))}
-                        >
-                          <i className="bi bi-chevron-left" /> Prev
-                        </button>
-                        <span className="align-self-center" style={{ color: "var(--color-text-muted)", fontSize: "0.9rem" }}>
-                          Page {page} / {totalPages}
-                        </span>
-                        <button
-                          className="ghost-btn"
-                          disabled={page >= totalPages}
-                          onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                        >
-                          Next <i className="bi bi-chevron-right" />
-                        </button>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="empty-state">
-                    <i className="bi bi-search" style={{ fontSize: "2.5rem", color: "var(--color-text-muted)" }} />
-                    <p className="mt-3" style={{ color: "var(--color-text-primary)", fontSize: "1.1rem" }}>
-                      No {itemLabel} match these filters
-                    </p>
-                    <p style={{ color: "var(--color-text-muted)" }}>
-                      Try adjusting your filters or hit Reset.
-                    </p>
-                  </div>
-                )}
+                {/* Only this part suspends on filter/page changes — the
+                    sidebar and toolbar above stay mounted and interactive. */}
+                <Suspense fallback={<ResultsSkeleton itemLabel={itemLabel} />}>
+                  <MovieResultsBody
+                    isTV={isTV}
+                    searchQuery={searchQuery}
+                    discoverParams={discoverParams}
+                    itemLabel={itemLabel}
+                    page={page}
+                    setPage={setPage}
+                    totalPages={totalPages}
+                    setTotalPages={setTotalPages}
+                    genreName={genreName}
+                    navigate={navigate}
+                    isFavourite={isFavourite}
+                    toggleFavourite={optimisticToggleFavourite}
+                  />
+                </Suspense>
               </section>
             </section>
           </div>
         </main>
       </div>
     </ErrorBoundary>
+  );
+}
+
+function ResultsSkeleton({ itemLabel }: { itemLabel: string }) {
+  return (
+    <>
+      <p className="home-section-subtext mb-3">Loading {itemLabel}…</p>
+      <MovieTileSkeletonGrid count={6} />
+    </>
+  );
+}
+
+interface MovieResultsBodyProps {
+  isTV: boolean;
+  searchQuery: string;
+  discoverParams: DiscoverParams;
+  itemLabel: string;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  totalPages: number;
+  setTotalPages: React.Dispatch<React.SetStateAction<number>>;
+  genreName: (id?: number) => string;
+  navigate: ReturnType<typeof useNavigate>;
+  isFavourite: (id: number) => boolean;
+  toggleFavourite: (movie: Movie) => void;
+}
+
+// This is the only part of the page that calls the suspense-enabled data
+// hooks — isolating them here means only this subtree (wrapped in its own
+// <Suspense> above) shows a loading state when params change.
+function MovieResultsBody({
+  isTV,
+  searchQuery,
+  discoverParams,
+  itemLabel,
+  page,
+  setPage,
+  totalPages,
+  setTotalPages,
+  genreName,
+  navigate,
+  isFavourite,
+  toggleFavourite,
+}: MovieResultsBodyProps) {
+  let movies: Movie[] = [];
+  let total = 0;
+
+  if (searchQuery.trim()) {
+    const searchResults = useSearch(searchQuery);
+    movies = (searchResults?.results || []).filter((m: Movie) => m.poster_path || m.backdrop_path);
+    total = searchResults?.total_pages || 0;
+  } else if (isTV) {
+    const discoverResults = useDiscoverTV(discoverParams);
+    movies = (discoverResults?.results || []).filter((m: Movie) => m.poster_path || m.backdrop_path);
+    total = discoverResults?.total_pages || 0;
+  } else {
+    const discoverResults = useDiscover(discoverParams);
+    movies = (discoverResults?.results || []).filter((m: Movie) => m.poster_path || m.backdrop_path);
+    total = discoverResults?.total_pages || 0;
+  }
+
+  React.useEffect(() => {
+    if (total > 0) setTotalPages(total);
+  }, [total, setTotalPages]);
+
+  if (movies.length === 0) {
+    return (
+      <div className="empty-state">
+        <i className="bi bi-search" style={{ fontSize: "2.5rem", color: "var(--color-text-muted)" }} />
+        <p className="mt-3" style={{ color: "var(--color-text-primary)", fontSize: "1.1rem" }}>
+          No {itemLabel} match these filters
+        </p>
+        <p style={{ color: "var(--color-text-muted)" }}>Try adjusting your filters or hit Reset.</p>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <p className="home-section-subtext mb-3">
+        {movies.length} {itemLabel} found
+      </p>
+      <div className="movies-grid">
+        {movies.map((m) => (
+          <MovieTile
+            key={m.id}
+            movie={m}
+            genreName={genreName(m.genre_ids?.[0])}
+            onOpen={() => navigate(`/movie/${m.id}`)}
+            isFavourite={isFavourite}
+            toggleFavourite={toggleFavourite}
+          />
+        ))}
+      </div>
+
+      {!searchQuery && totalPages > 1 && (
+        <div className="d-flex justify-content-center gap-2 mt-4">
+          <button
+            className="ghost-btn"
+            disabled={page <= 1}
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+          >
+            <i className="bi bi-chevron-left" /> Prev
+          </button>
+          <span className="align-self-center" style={{ color: "var(--color-text-muted)", fontSize: "0.9rem" }}>
+            Page {page} / {totalPages}
+          </span>
+          <button
+            className="ghost-btn"
+            disabled={page >= totalPages}
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+          >
+            Next <i className="bi bi-chevron-right" />
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 

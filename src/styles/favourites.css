@@ -1,0 +1,82 @@
+/* favourites.css — adapted: body → .favourites-page wrapper (SPA) */
+.favourites-page {
+    background: var(--color-black);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-display);
+    padding-bottom: 3rem;
+}
+
+/* HERO */
+.fav-hero {
+    padding: 50px 0;
+}
+
+.fav-hero .small {
+    color: var(--color-accent);
+    letter-spacing: 2px;
+}
+
+.fav-hero span.accent {
+    color: var(--color-accent);
+}
+
+/* CARD */
+.fav-card {
+    background: var(--color-bg-end);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fav-card .card-img-top {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* TAG */
+.tag {
+    background-color: #3b1f1f;
+    color: #ff6b6b;
+    font-size: var(--font-size-sm);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* RATE */
+.rate {
+    color: gold;
+}
+
+/* BUTTON */
+.watch-btn {
+    background: var(--color-accent);
+    color: var(--color-black);
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+}
+
+.watch-btn:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-black);
+}
+
+.fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.fav-card .p-3 {
+    padding: 1rem !important;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--color-text-muted);
+}

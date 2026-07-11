@@ -1,0 +1,6 @@
+export { default as MovieCard } from '@components/movie/MovieCard'
+export { default as MovieDetailsPage } from '@components/movie/MovieDetailsPage'
+export { default as MovieListPage } from '@components/movie/MovieListPage'
+export * from '@components/movie/MovieCard'
+export * from '@components/movie/MovieDetailsPage'
+export * from '@components/movie/MovieListPage'

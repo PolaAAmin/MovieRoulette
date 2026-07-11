@@ -1,6 +1,13 @@
 #Bootstrap
 bootstrap-5.3.8-dist/
 
+config.yaml
+plan.md
+
+CLAUDE.md
+you-are-a-professional-immutable-milner.md
+claude.txt
+
 #Domain Name
 CNAME
 
@@ -143,3 +150,10 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+*storybook.log
+storybook-static
+/.storybook
+
+/.claude
+/.vscode

@@ -1,0 +1,301 @@
+/* movielist.css — adapted: body.movie-list-page → .movie-list-page wrapper (SPA) */
+.movie-list-page {
+    margin: 0;
+    font-family: var(--font-family-body);
+    background: var(--gradient-page-background);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+}
+
+.movie-list-main {
+    min-height: 100vh;
+    padding: 3rem 0 4rem;
+}
+
+/* .eyebrow moved to src/styles/root.css */
+
+/* .glass-panel moved to src/styles/root.css */
+
+.page-intro {
+    margin-bottom: 2rem;
+}
+
+.page-intro h1 {
+    margin: 1rem 0 0.75rem;
+    font-family: var(--font-family-display);
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.page-intro p {
+    max-width: 46rem;
+    color: var(--color-text-body-alt);
+    line-height: 1.8;
+}
+
+.catalog-shell {
+    display: grid;
+    grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.filter-panel,
+.results-panel {
+    border-radius: var(--radius-2xl);
+    padding: 1.5rem;
+}
+
+.filter-panel {
+    position: sticky;
+    top: 1.5rem;
+}
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.1rem;
+}
+
+.panel-title h2,
+.results-panel h2,
+.movie-tile h3 {
+    font-family: var(--font-family-display);
+    font-weight: 700;
+    margin: 0;
+}
+
+.reset-btn,
+.sort-btn {
+    border: 0;
+    background: transparent;
+    color: var(--color-text-accent-strong);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-group + .filter-group {
+    margin-top: 1.5rem;
+}
+
+.filter-group h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-body-strong);
+    margin-bottom: 0.8rem;
+}
+
+.pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.genre-pill,
+.sort-btn {
+    border-radius: var(--radius-pill);
+    padding: 0.65rem 0.95rem;
+    border: var(--border-subtle);
+    background: var(--color-surface-white-04);
+    color: var(--color-text-primary);
+    font-weight: 600;
+    transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.genre-pill {
+    cursor: pointer;
+}
+
+.genre-pill.active,
+.sort-btn.active {
+    background: var(--gradient-accent-surface);
+    border-color: var(--color-accent-border);
+    color: var(--color-text-accent);
+}
+
+.range-display {
+    margin-top: 0.75rem;
+    color: var(--color-text-accent);
+    font-weight: 700;
+}
+
+.filter-panel input[type="range"] {
+    width: 100%;
+    accent-color: var(--color-accent);
+}
+
+.filter-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-text-body-alt);
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+}
+
+.filter-panel input[type="checkbox"] {
+    accent-color: var(--color-accent);
+}
+
+.results-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.results-toolbar p {
+    margin: 0;
+    color: var(--color-text-muted-soft);
+}
+
+.sort-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) transparent;
+}
+
+@media (min-width: 1200px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.movies-grid::-webkit-scrollbar {
+    width: 8px;
+}
+.movies-grid::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 999px;
+}
+
+.movie-tile {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 1.25rem;
+    border-radius: var(--radius-xl);
+    padding: 1rem;
+    min-height: 200px;
+    transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.movie-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 118, 104, 0.25);
+    border-color: rgba(255, 118, 104, 0.3);
+}
+
+.movie-tile-poster-wrap {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: fit-content;
+}
+
+.movie-tile img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-slow);
+}
+
+.movie-tile:hover img {
+    transform: scale(1.05);
+}
+
+.movie-tile > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-tile h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.4rem;
+    line-height: 1.3;
+}
+
+.movie-tile p {
+    color: var(--color-text-body-muted);
+    line-height: 1.6;
+    margin: 0 0 0.6rem;
+    font-size: 0.88rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.movie-badges,
+.movie-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.movie-facts span {
+    padding: 0.45rem 0.7rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-white-05);
+    color: var(--color-text-tertiary);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* Badge and movie-badges utilities moved to src/styles/root.css */
+
+.movie-list-page .info-badge {
+    background: var(--color-surface-white-05) !important;
+    color: var(--color-text-tertiary) !important;
+}
+
+.movie-tile.is-hidden {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .catalog-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 767px) {
+    .movie-list-main {
+        padding-top: 2.25rem;
+    }
+
+    .results-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .movies-grid {
+        grid-template-columns: 1fr;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .movie-tile {
+        grid-template-columns: 1fr;
+    }
+}

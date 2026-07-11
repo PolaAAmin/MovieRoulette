@@ -1,0 +1,116 @@
+/* Shared utility classes consolidated from page styles */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.85rem;
+    border: var(--border-subtle);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-white-04);
+    color: var(--color-text-accent-soft);
+    font-size: var(--font-size-label);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.text-gradient {
+    background-image: var(--gradient-text-accent);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.glass-panel {
+    border: var(--border-subtle);
+    background: var(--gradient-glass);
+    box-shadow: var(--shadow-glass);
+    backdrop-filter: blur(var(--blur-glass));
+    -webkit-backdrop-filter: blur(var(--blur-glass));
+}
+
+.hero-btn,
+.ghost-btn {
+    min-height: 3.25rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.hero-btn {
+    border: none;
+    background: var(--gradient-brand);
+    color: var(--color-text-on-accent);
+    box-shadow: var(--shadow-accent);
+}
+
+.hero-btn:hover {
+    background: linear-gradient(135deg, #ff6f61 0%, #e25045 100%);
+    color: #120909;
+    box-shadow: 0 16px 38px rgba(226, 80, 69, 0.35);
+}
+
+.ghost-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-strong);
+    background: var(--color-surface-white-04);
+    color: var(--color-text-primary);
+}
+
+.hero-btn:hover,
+.ghost-btn:hover,
+.filter-chip:hover,
+.quick-card:hover,
+.movie-card:hover,
+.spotlight-card:hover {
+    transform: translateY(-4px);
+}
+
+.genre-badge,
+.rating-badge,
+.year-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    min-height: 1.75rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.65rem;
+    font-family: var(--font-family-display);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.genre-badge {
+    background: linear-gradient(135deg, #8b2cff 0%, #5d14cb 100%);
+    color: #ffffff !important;
+}
+
+.rating-badge {
+    background: linear-gradient(135deg, #ffd93d 0%, #ffbf00 100%);
+    color: #111111 !important;
+}
+
+.year-badge {
+    background: linear-gradient(135deg, #ff8e80 0%, #ff5a4a 100%);
+    color: #170808 !important;
+}
+
+.movie-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.7rem;
+}

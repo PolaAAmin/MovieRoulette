@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Form, Modal, Button } from "react-bootstrap";
 import type { Genre, Movie, VideoResponse } from "@/lib/tmdb/types";
 import { tmdbClient } from "@/lib/tmdb/client";
-import { useFavouritesStore } from "@/store";
 import { toast } from "sonner";
 import { backdropUrl, formatRating, formatYear } from "@/lib/tmdb/images";
 import DualRange from "@components/ui/DualRange";
@@ -15,7 +14,7 @@ import { useOptimisticFavourites } from "@/features/favourites";
 
 export default function RandomPage() {
   const navigate = useNavigate();
-  const { optimisticFavourites, isFavourite, toggleFavourite: optimisticToggleFavourite } = useOptimisticFavourites();
+  const { isFavourite, toggleFavourite: optimisticToggleFavourite } = useOptimisticFavourites();
 
   const [genres, setGenres] = useState<Genre[]>([]);
   const [selectedGenres, setSelectedGenres] = useState<number[]>([]);
@@ -164,14 +163,20 @@ export default function RandomPage() {
   async function watchTrailer(movieId: number) {
     try {
       const vids: VideoResponse = await tmdbClient.movieVideos(movieId);
-      const yt = vids.results.find(
-        (v) => v.site === "YouTube" && (v.type === "Trailer" || v.type === "Teaser")
-      );
-      setTrailerKey(yt?.key ?? "2h9CqRlHzrc");
+      const results = vids.results || [];
+      const officialTrailer = results.find((v) => v.site === "YouTube" && v.type === "Trailer" && v.official);
+      const anyTrailer = results.find((v) => v.site === "YouTube" && v.type === "Trailer");
+      const teaser = results.find((v) => v.site === "YouTube" && v.type === "Teaser");
+      const key = (officialTrailer || anyTrailer || teaser)?.key ?? null;
+
+      if (!key) {
+        toast("No trailer available", { description: "TMDB doesn't have one listed for this title yet." });
+        return;
+      }
+      setTrailerKey(key);
       setTrailerOpen(true);
     } catch {
-      setTrailerKey("2h9CqRlHzrc");
-      setTrailerOpen(true);
+      toast.error("Couldn't load the trailer. Try again in a moment.");
     }
   }
 
@@ -399,6 +404,10 @@ function RandomResult({
 
   return (
     <div className="d-flex flex-column">
+      {/* .carousel-item now ONLY contains the image + its overlay caption.
+          Its height is fully determined by the image (aspect-ratio 16/9),
+          and overflow:hidden clips any caption content that grows taller
+          than that box — it can never push into what comes after it. */}
       <div className="carousel-item active">
         <img
           src={backdropUrl(movie.backdrop_path || movie.poster_path, "w1280")}
@@ -414,7 +423,7 @@ function RandomResult({
             ))}
             <div className="movie-rating d-flex align-items-center gap-1">
               <i className="bi bi-star-fill" />
-              <span>{rating}</span>
+              <span className="movie-rating-value">{rating}</span>
             </div>
           </div>
           <div className="movie-info">
@@ -437,32 +446,37 @@ function RandomResult({
             </Button>
           </div>
         </div>
+      </div>
 
-        <div className="btns-resubmit">
-          <button type="button" id="dismiss" className="resubmit-item" onClick={onDismiss}>
-            <span className="circle small">
-              <i className="bi bi-x-lg" />
-            </span>
-            <p>Dismiss</p>
-          </button>
-          <button type="button" id="randomize" className="resubmit-item" onClick={onRandomize}>
-            <span className="circle big">
-              <i className="bi bi-arrow-repeat" />
-            </span>
-            <p>Randomize</p>
-          </button>
-          <button
-            type="button"
-            id="favourite"
-            className={`resubmit-item ${fav ? "active" : ""}`}
-            onClick={onFavourite}
-          >
-            <span className="circle small">
-              <i className={fav ? "bi bi-heart-fill" : "bi bi-heart"} />
-            </span>
-            <p>{fav ? "Favourited" : "Favourite"}</p>
-          </button>
-        </div>
+      {/* Moved out of .carousel-item — this is now a plain sibling that
+          always renders directly below the image card, regardless of how
+          tall the caption's content (title length, badge count, etc.) is
+          for any given movie. No more fixed margin fighting a variable
+          overlap. */}
+      <div className="btns-resubmit">
+        <button type="button" id="dismiss" className="resubmit-item" onClick={onDismiss}>
+          <span className="circle small">
+            <i className="bi bi-x-lg" />
+          </span>
+          <p>Dismiss</p>
+        </button>
+        <button type="button" id="randomize" className="resubmit-item" onClick={onRandomize}>
+          <span className="circle big">
+            <i className="bi bi-arrow-repeat" />
+          </span>
+          <p>Randomize</p>
+        </button>
+        <button
+          type="button"
+          id="favourite"
+          className={`resubmit-item ${fav ? "active" : ""}`}
+          onClick={onFavourite}
+        >
+          <span className="circle small">
+            <i className={fav ? "bi bi-heart-fill" : "bi bi-heart"} />
+          </span>
+          <p>{fav ? "Favourited" : "Favourite"}</p>
+        </button>
       </div>
     </div>
   );

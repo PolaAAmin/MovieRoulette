@@ -198,6 +198,12 @@
     backdrop-filter: blur(8px);
 }
 
+.carousel-item .carousel-caption .movie-rating .movie-rating-value {
+    color: var(--color-warning);
+    background: none;
+    font-weight: 800;
+}
+
 .movie-info .movie-title {
     font-weight: 800;
     font-family: var(--font-family-display);
@@ -243,12 +249,9 @@
     display: flex;
     justify-content: center;
     gap: 2.5rem;
-    /* Was 1.5rem — .carousel-caption above is position:absolute, so it adds
-       no flow height; this row starts right at the image's bottom edge.
-       Needs enough clearance for the 90px "Randomize" circle + label so it
-       doesn't overlap the Watch Trailer / View Details buttons inside the
-       caption. */
-    margin-top: 5rem;
+    /* Now a plain sibling below the whole image card (see RandomPage.tsx) —
+       this only needs normal breathing room, no more overlap math. */
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 

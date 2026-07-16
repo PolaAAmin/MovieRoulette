@@ -157,3 +157,5 @@ storybook-static
 
 /.claude
 /.vscode
+.vercel
+.env*

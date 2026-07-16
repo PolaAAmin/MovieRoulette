@@ -20,5 +20,6 @@ export const config = {
   tmdbBaseUrl: TMDB_BASE_URL,
   tmdbAccessToken: TMDB_ACCESS_TOKEN,
   tmdbApiKey: TMDB_API_KEY,
-  corsOrigin: process.env.CORS_ORIGIN || "http://localhost:5173",
+  corsOrigin: process.env.CORS_ORIGIN ||
+             (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:5173"),
 };

@@ -40,6 +40,12 @@ app.use((err: Error & { status?: number }, _req: Request, res: Response, _next: 
   res.status(err.status || 500).json({ error: err.message || "Internal server error" });
 });
 
-app.listen(config.port, () => {
-  console.log(`API server listening on http://localhost:${config.port}`);
-});
+// Only listen on port if not running in Vercel serverless environment
+if (process.env.VERCEL_ENV !== "production" && process.env.VERCEL_ENV !== "preview") {
+  app.listen(config.port, () => {
+    console.log(`API server listening on http://localhost:${config.port}`);
+  });
+}
+
+// Export the app for Vercel serverless functions
+export default app;

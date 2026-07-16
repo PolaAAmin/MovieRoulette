@@ -13,7 +13,7 @@ import { useOptimisticFavourites } from "@/features/favourites";
 
 export default function MovieDetailsPage({ movieId }: { movieId: number }) {
   const navigate = useNavigate();
-  const { optimisticFavourites, isFavourite, toggleFavourite: optimisticToggleFavourite } = useOptimisticFavourites();
+  const { favourites: optimisticFavourites, isFavourite, toggleFavourite: optimisticToggleFavourite } = useOptimisticFavourites();
 
   // Use suspense-enabled hooks — these are already resolved by the time
   // this component renders (Suspense holds up rendering until they settle),

@@ -28,6 +28,7 @@ export default defineConfig({
       },
     },
   },
+  base: process.env.VERCEL_ENV === 'production' ? '/movie-roulette/' : '/',
   test: {
     projects: [{
       extends: true,

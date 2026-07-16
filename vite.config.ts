@@ -28,7 +28,14 @@ export default defineConfig({
       },
     },
   },
-  base: process.env.VERCEL_ENV === 'production' ? '/movie-roulette/' : '/',
+  // Vercel serves this app from the domain root (movie-roulette-one.vercel.app/),
+  // not from a subpath — unlike GitHub Pages, which serves a repo at
+  // username.github.io/repo-name/. The previous conditional here set base to
+  // '/movie-roulette/' whenever VERCEL_ENV === 'production' (which Vercel sets
+  // on every production deploy), causing every asset URL in the built
+  // index.html to be prefixed with a path segment that doesn't exist on the
+  // actual deployment — hence every JS/CSS request 404ing.
+  base: "/",
   test: {
     projects: [{
       extends: true,

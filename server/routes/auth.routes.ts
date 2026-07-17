@@ -1,5 +1,5 @@
 import { Router, type Request, type Response, type NextFunction } from "express";
-import { tmdbRequest } from "../tmdbClient";
+import { tmdbRequest } from "../tmdbClient.js";
 
 const router = Router();
 

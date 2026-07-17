@@ -1,10 +1,10 @@
 import express, { type Request, type Response, type NextFunction } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { config } from "./config";
-import tmdbRoutes from "./routes/tmdb.routes";
-import searchRoutes from "./routes/search.routes";
-import authRoutes from "./routes/auth.routes";
+import { config } from "./config.js";
+import tmdbRoutes from "./routes/tmdb.routes.js";
+import searchRoutes from "./routes/search.routes.js";
+import authRoutes from "./routes/auth.routes.js";
 
 export function createApp() {
   const app = express();

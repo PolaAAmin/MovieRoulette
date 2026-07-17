@@ -1,4 +1,4 @@
-import { createApp } from "../server/app";
+import { createApp } from "../server/app.js";
 
 // Vercel deploys this file as a single serverless function and routes every
 // request under /api/* to it (see the catch-all filename below). Exporting

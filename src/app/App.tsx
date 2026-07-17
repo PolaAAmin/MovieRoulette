@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next';
 export default function App() {
   return (
     <AppProviders>
+      <Analytics />
       <Layout>
         <AppRoutes />
       </Layout>

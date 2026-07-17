@@ -1,3 +1,5 @@
-import { createApp } from "../server/app.js";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default createApp();
+export default async function handler(_req: VercelRequest, res: VercelResponse) {
+  return res.json({ ok: true });
+}

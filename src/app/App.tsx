@@ -8,7 +8,6 @@ export default function App() {
     <AppProviders>
       <Layout>
         <AppRoutes />
-        <Analytics />
       </Layout>
     </AppProviders>
   );

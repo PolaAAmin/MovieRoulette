@@ -76,38 +76,38 @@ router.get(
   })
 );
 
-// GET /api/tmdb/movie/:id
+// GET /api/tmdb/movie-details?id=123
 router.get(
-  "/movie/:id",
+  "/movie-details",
   handler(async (req, res) => {
-    const data = await tmdbFetch(`/movie/${req.params.id}`);
+    const data = await tmdbFetch(`/movie/${req.query.id}`);
     res.json({ data });
   })
 );
 
-// GET /api/tmdb/movie/:id/credits
+// GET /api/tmdb/movie-credits?id=123
 router.get(
-  "/movie/:id/credits",
+  "/movie-credits",
   handler(async (req, res) => {
-    const data = await tmdbFetch(`/movie/${req.params.id}/credits`);
+    const data = await tmdbFetch(`/movie/${req.query.id}/credits`);
     res.json({ data });
   })
 );
 
-// GET /api/tmdb/movie/:id/videos
+// GET /api/tmdb/movie-videos?id=123
 router.get(
-  "/movie/:id/videos",
+  "/movie-videos",
   handler(async (req, res) => {
-    const data = await tmdbFetch(`/movie/${req.params.id}/videos`);
+    const data = await tmdbFetch(`/movie/${req.query.id}/videos`);
     res.json({ data });
   })
 );
 
-// GET /api/tmdb/movie/:id/similar
+// GET /api/tmdb/movie-similar?id=123
 router.get(
-  "/movie/:id/similar",
+  "/movie-similar",
   handler(async (req, res) => {
-    const data = await tmdbFetch(`/movie/${req.params.id}/similar`);
+    const data = await tmdbFetch(`/movie/${req.query.id}/similar`);
     res.json({ data });
   })
 );

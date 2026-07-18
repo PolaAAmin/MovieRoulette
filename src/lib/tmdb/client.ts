@@ -45,13 +45,18 @@ export const tmdbClient = {
     return fetchApi<MovieListResponse>(`/api/tmdb/tv-discover?${sp.toString()}`);
   },
 
-  movieDetails: (id: number) => fetchApi<Movie | null>(`/api/tmdb/movie/${id}`),
+  // Changed from /api/tmdb/movie/:id (nested path) to /api/tmdb/movie-details?id=
+  // (flat + query param) — Vercel's catch-all function routing was not
+  // reliably matching multi-segment paths like movie/123/credits, only
+  // single-segment ones like genres or discover. Every /api/tmdb/* route is
+  // now exactly one path segment, matching the shape that's proven to work.
+  movieDetails: (id: number) => fetchApi<Movie | null>(`/api/tmdb/movie-details?id=${id}`),
 
-  movieCredits: (id: number) => fetchApi<CastResponse | null>(`/api/tmdb/movie/${id}/credits`),
+  movieCredits: (id: number) => fetchApi<CastResponse | null>(`/api/tmdb/movie-credits?id=${id}`),
 
-  movieVideos: (id: number) => fetchApi<VideoResponse>(`/api/tmdb/movie/${id}/videos`),
+  movieVideos: (id: number) => fetchApi<VideoResponse>(`/api/tmdb/movie-videos?id=${id}`),
 
-  similarMovies: (id: number) => fetchApi<MovieListResponse>(`/api/tmdb/movie/${id}/similar`),
+  similarMovies: (id: number) => fetchApi<MovieListResponse>(`/api/tmdb/movie-similar?id=${id}`),
 
   search: (q: string) => fetchApi<MovieListResponse>(`/api/search?q=${encodeURIComponent(q)}`),
 };

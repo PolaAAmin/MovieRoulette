@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import App from "@/app/App.tsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <SpeedInsights />
     </BrowserRouter>
   </React.StrictMode>
 );
